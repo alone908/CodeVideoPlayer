@@ -16,34 +16,36 @@ $.ajax({
             var parser = new DOMParser()
             var doc = parser.parseFromString(contnetString, "text/xml");
             console.log(doc);
+
+            PrintOut(contentMap);
         }
     }
 })
 
 function ContentMapping(jsonObj) {
-    var contentMap = [];
+    var ContentMap = [];
 
     jsonObj.forEach(function (items, key) {
         items.highlights.forEach(function (contInfo, index) {
             var textArray = contInfo.selection.split("");
             textArray.forEach(function (chr, number) {
-                if(typeof contentMap[parseInt(contInfo.begin_line)] === 'undefined'){
-                    contentMap[parseInt(contInfo.begin_line)] = [];
+                if(typeof ContentMap[parseInt(contInfo.begin_line)] === 'undefined'){
+                    ContentMap[parseInt(contInfo.begin_line)] = [];
                 }
-                contentMap[parseInt(contInfo.begin_line)][parseInt(contInfo.begin_ch)+number] = chr;
+                ContentMap[parseInt(contInfo.begin_line)][parseInt(contInfo.begin_ch)+number] = chr;
             })
         })
     });
 
-    contentMap.forEach(function (line, key) {
+    ContentMap.forEach(function (line, key) {
         for(var i=0; i<=line.length-1; i++){
-            if(typeof contentMap[key][i] === 'undefined'){
-                contentMap[key][i] = ' ';
+            if(typeof ContentMap[key][i] === 'undefined'){
+                ContentMap[key][i] = ' ';
             }
         }
     });
 
-    return contentMap;
+    return ContentMap;
 }
 
 function WriteContentString(ContentMap) {
@@ -57,4 +59,29 @@ function WriteContentString(ContentMap) {
     });
 
     return contentString;
+}
+
+var line = 0;
+var chr = 0;
+var lastLine = 0;
+var lastChr = 0;
+function PrintOut(ContentMap) {
+    var PrintOutTimer = setInterval(function () {
+
+        $('#x'+lastChr+'y'+lastLine).css('border-right','0px');
+        $('#x'+chr+'y'+line).html(ContentMap[line][chr]).css('border-right','1px solid black');
+
+        lastChr = chr;
+        lastLine = line;
+
+        if(chr === ContentMap[line].length-1){
+            line ++;
+            chr = 0;
+        }else {
+            chr ++;
+        }
+        if(line === ContentMap.length && chr === 0){
+            clearInterval(PrintOutTimer);
+        }
+    },250);
 }
