@@ -5,6 +5,7 @@
     <title>CodeVideoPlayer</title>
 
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/CodeVideoPlayer.js"></script>
     <script src="js/index.js"></script>
 
     <link rel="stylesheet" href="css/index.css">
@@ -16,109 +17,7 @@
 
         <div id="Screen">
 
-            <span id="y0" style="display: block;">
-                <span id="x0y0" style="display:inline-block; font-size: 12px; vertical-align: text-top;">&nbsp;</span>
-                <span id="x1y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x2y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x3y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x4y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x5y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x6y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x7y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x8y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x9y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x10y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x11y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x12y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x13y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x14y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x15y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x16y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x17y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x18y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x19y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x20y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x21y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x22y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x23y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x24y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x25y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x26y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x27y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x28y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x29y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x30y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x31y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x32y0" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-            </span>
 
-            <span id="y1" style="display: block;">
-                <span id="x0y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x1y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x2y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x3y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x4y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x5y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x6y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x7y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x8y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x9y1" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-            </span>
-
-            <span id="y2" style="display: block;">
-                <span id="x0y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x1y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x2y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x3y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x4y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x5y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x6y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x7y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x8y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x9y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x10y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x11y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x12y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x13y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x14y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x15y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x16y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x17y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x18y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x19y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x20y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x21y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x22y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x23y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x24y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x25y2" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-            </span>
-
-            <span id="y3" style="display: block;">
-                <span id="x0y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x1y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x2y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x3y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x4y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x5y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x6y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x7y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x8y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x9y3" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-            </span>
-
-            <span id="y4" style="display: block;">
-                <span id="x0y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x1y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x2y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x3y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x4y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x5y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x6y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x7y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x8y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-                <span id="x9y4" style="display:inline-block; font-size: 12px; vertical-align: text-top">&nbsp;</span>
-            </span>
 
         </div>
 

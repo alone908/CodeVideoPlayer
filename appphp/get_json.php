@@ -10,10 +10,8 @@ $filename = $_POST['filename'];
 $file = '../json/'.$filename.'.json';
 
 if(is_file($file)){
-    $content = file_get_contents('../json/'.$filename.'.json');
-    $json_obj = json_decode($content);
-    echo json_encode(array('result'=>'good','jsonObj'=>$json_obj));
+    $content = file_get_contents('../json/'.$filename.'.json');    
+    echo json_encode(array('result'=>'good','json'=>$content));
 }else{
     echo json_encode(array('result'=>'bad','msg'=>'can not find file.'));
 }
-

@@ -1,3 +1,4 @@
+var CodeVideoPlayer = new CodeVideoPlayer();
 $.ajax({
     type: 'POST',
     url: "appphp/get_json.php",
@@ -5,22 +6,15 @@ $.ajax({
     dataType: 'JSON',
     success: function (data) {
         if(data.result === 'good'){
-            console.log(data);
 
-            var contentMap = ContentMapping(data.jsonObj);
-            console.log(contentMap);
+            CodeVideoPlayer.CreateVideo(data.json,'VideoPlayer');
+            console.log(CodeVideoPlayer);
 
-            var contnetString = WriteContentString(contentMap);
-            console.log(contnetString);
-
-            var parser = new DOMParser()
-            var doc = parser.parseFromString(contnetString, "text/xml");
-            console.log(doc);
-
-            PrintOut(contentMap);
         }
     }
 })
+
+
 
 function ContentMapping(jsonObj) {
     var ContentMap = [];
