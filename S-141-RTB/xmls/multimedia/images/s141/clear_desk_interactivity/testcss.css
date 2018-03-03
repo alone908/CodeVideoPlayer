@@ -1,0 +1,156 @@
+
+.poproll-1{
+    position:absolute;
+        
+    }
+
+.poproll-1 span {
+    display:none;
+    
+	}
+
+.poproll-1:hover span {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 233px;
+	
+	right: 166px;
+    top: 16px;
+	
+    }	
+
+.poproll-11 {
+    position:absolute;   
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 233px;    
+    right: 166px;
+    top: 16px;
+    opacity: .8;    
+}   
+
+
+.poproll-2{
+    position:absolute;
+        
+    }
+
+.poproll-2 span{
+    display:none;
+	
+    }
+
+.poproll-2:hover span{
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 253px;
+	
+    right: 146px;
+    top: 10px;
+	
+    }		
+
+.poproll-22 {
+    position:absolute;   
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 253px;    
+    right: 146px;
+    top: 10px;
+    opacity: .8;    
+}   
+
+
+.poproll-3{
+    position:absolute;
+        
+    }
+
+.poproll-3 span{
+    display:none;
+    
+	}
+
+.poproll-3:hover span{
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 233px;
+	
+    right: 55px;
+    top: -13px;
+	
+    }		
+
+.poproll-33 {
+    position:absolute;   
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 233px;    
+    right: 55px;
+    top: -13px;
+    opacity: .8;    
+}   
+
+
+.poproll-4{
+    position:absolute;
+        
+    }
+
+.poproll-4 span{
+    display:none;
+    
+	}
+
+.poproll-4:hover span{
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 233px;
+	
+    right: 133px;
+    top: 4px;
+	
+    }	
+
+.poproll-44 {
+    position:absolute;   
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: 0 0 11px 0 #000000;
+    display: block;
+    height: 53px;
+    position: absolute;    
+    width: 233px;    
+    right: 133px;
+    top: 4px;
+    opacity: .8; 
+
+}   

@@ -1,0 +1,33 @@
+#wrap{
+	width:571px;
+	min-height:833px;
+	background:url(barv1.1.jpg) repeat-y -2px 0;
+	padding-top:40px;
+	
+	
+}
+.content{
+	padding:5px 0 10px 0;
+	display:block;
+}
+.content strong{
+	color:#5ab9ba;
+	font-size:16px;
+}
+.nav{
+	width:80px;
+	float:left;
+	margin-top: 8px;
+	text-align:center;
+	display:block;
+	
+}
+.text{
+	width:486px;
+	float:left;
+	display:block;
+	margin-left:5px;
+}
+.cleardiv{
+	clear:both;
+}

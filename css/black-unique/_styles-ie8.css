@@ -1,0 +1,93 @@
+
+input.graphically
+{
+	margin: 0;
+	height: 16px;
+	width: 16px;
+	float: left;
+	position: absolute;
+	left: -999;
+	opacity: 0;
+	cursor:pointer;
+
+	padding-left: 1px;
+	padding-top: 4px;
+	padding-right: 0px;
+	padding-botton: 0px;
+
+}
+label.graphically
+{
+/*	float: left;*/
+	line-height: 16px;
+	padding: 0 0 0 18px;
+	cursor:pointer;
+	font-size:14px !important;
+
+}
+
+input.graphically + label.graphically
+{
+	background: url("../skins/gr_custom-inputs2.png") 0 -1px no-repeat;
+	height: 16px;
+}
+input.graphically[type=radio] + label.graphically										{ background-position: 0 -161px; }
+
+/* Checked styles */
+input.graphically[type=radio]:checked + label 							{ background-position: 0 -241px; }
+input.graphically[type=checkbox]:checked + label 							{ background-position: 0 -81px; }
+
+input.graphically[type=checkbox]:hover:checked + label,
+input.graphically[type=checkbox]:checked + label:hover,
+input.graphically[type=checkbox]:focus:checked + label 					{ background-position: 0 -101px; }
+
+input.graphically[type=radio]:hover:checked + label,
+input.graphically[type=radio]:checked + label:hover,
+input.graphically[type=radio]:focus:checked + label 						{ background-position: 0 -261px; }
+
+/* Hover & Focus styles */
+input.graphically[type=checkbox]:hover + label,
+input.graphically[type=checkbox]:focus + label,
+input.graphically[type=checkbox] + label:hover 							{ background-position: 0 -21px; }
+
+input.graphically[type=radio]:hover + label,
+input.graphically[type=radio]:focus + label,
+input.graphically[type=radio] + label:hover								{ background-position: 0 -181px; }
+
+/* Active styles */
+input.graphically[type=checkbox]:active + label,
+input.graphically[type=checkbox] + label:hover:active						{ background-position: 0 -41px; }
+
+input.graphically[type=radio]:active + label,
+input.graphically[type=radio] + label:hover:active						{ background-position: 0 -201px; }
+
+input.graphically[type=checkbox]:active:checked + label,
+input.graphically[type=checkbox]:checked + label:hover:active				{ background-position: 0 -121px; }
+
+input.graphically[type=radio]:active:checked + label,
+input.graphically[type=radio]:checked + label:hover:active				{ background-position: 0 -281px; }
+
+/* Disabled styles */
+input.graphically[type=checkbox]:disabled + label,
+input.graphically[type=checkbox]:hover:disabled + label,
+input.graphically[type=checkbox]:focus:disabled + label,
+input.graphically[type=checkbox]:disabled + label:hover,
+input.graphically[type=checkbox]:disabled + label:hover:active			{ background-position: 0 -61px; }
+
+input.graphically[type=radio]:disabled + label,
+input.graphically[type=radio]:hover:disabled + label,
+input.graphically[type=radio]:focus:disabled + label,
+input.graphically[type=radio]:disabled + label:hover,
+input.graphically[type=radio]:disabled + label:hover:active				{ background-position: 0 -221px; }
+
+input.graphically[type=checkbox]:disabled:checked + label,
+input.graphically[type=checkbox]:hover:disabled:checked + label,
+input.graphically[type=checkbox]:focus:disabled:checked + label,
+input.graphically[type=checkbox]:disabled:checked + label:hover,
+input.graphically[type=checkbox]:disabled:checked + label:hover:active	{ background-position: 0 -141px; }
+
+input.graphically[type=radio]:disabled:checked + label,
+input.graphically[type=radio]:hover:disabled:checked + label,
+input.graphically[type=radio]:focus:disabled:checked + label,
+input.graphically[type=radio]:disabled:checked + label:hover,
+input.graphically[type=radio]:disabled:checked + label:hover:active		{ background-position: 0 -301px; }

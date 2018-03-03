@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Language" content="en-us">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Yantramanav:400,300,700|Oswald:300|Raleway:400,400i" rel="stylesheet"> 
+
+  <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+  <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery.browser.min.js" type="text/javascript"></script>
+  <script src="js/modernizr.custom.86901.js" type="text/javascript"></script>
+  <script src="js/swfobject.js" type="text/javascript"></script>
+  <script src="js/browservalidation.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    var appendToUrl = "index.htm";
+
+    $(document).ready(function () {
+
+      admin_Branding = getParameterByName('ReqData');
+      if (admin_Branding != "") {
+        appendToUrl += "?ReqData=" + admin_Branding;
+      }
+
+      if (ValidateBrowser()) {
+        window.location.href = appendToUrl;
+      }
+      else {
+        DisplaySupportWarning();
+      }
+    });
+
+    function DisplaySupportWarning() {
+      var IE_FULLNAME = "Internet Explorer";
+      var FF_FULLNAME = "Mozilla Firefox";
+      var CH_FULLNAME = "Chrome";
+      var SF_FULLNAME = "Safari";
+      var IPAD_FULLNAME = "iPad";
+      var IPHONE_FULLNAME = "iPhone";
+      var ANDROID_FULLNAME = "Android";
+      var NEXUS_FULLNAME = "Nexus";
+      var FLASH_VERSION = "Adboe Flash Plug-in";
+
+      if (WARNING_FOR_BROWSERVERSION == 1) {
+        $("#browser_ie").text(IE_FULLNAME + ' ' + parseFloat(MIN_IE_VERSION).toFixed(1) + ' and above');
+        $("#browser_ff").text(FF_FULLNAME + ' ' + parseFloat(MIN_FIREFOX_VERSION).toFixed(1) + ' and above');
+        $("#browser_ch").text(CH_FULLNAME + ' ' + parseFloat(MIN_CHROME_VERSION).toFixed(1) + ' and above');
+        $("#browser_sf").text(SF_FULLNAME + ' ' + parseFloat(MIN_SAFARI_VERSION).toFixed(1) + ' and above');
+        $("#browser_ipad").text(SF_FULLNAME + ' on ' + IPAD_FULLNAME);
+        $("#browser_iphone").text(SF_FULLNAME + ' on ' + IPHONE_FULLNAME);
+        $("#browser_android").text(ANDROID_FULLNAME);
+      }
+      else {
+        if (WARNING_FOR_FLASHVERSION == 1) {
+        }
+      }
+
+      $("#box-intro").css("display", "block");
+
+      $("#redirectToPage").href = appendToUrl;
+
+    }
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+      var regexS = "[\\?&]" + name + "=([^&#]*)";
+      var regex = new RegExp(regexS, 'i');
+      var results = regex.exec(window.location.search);
+      if (results == null)
+        return "";
+      else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+
+  </script>
+  <link href="css/browser_check.css" rel="stylesheet" type="text/css">
+  <!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+      filter: none;
+    }
+  </style>
+  <![endif]-->
+
+<body>
+<br><br><br>
+
+<div id="box-intro" style="display:none">
+  <br>
+  <br><br><br>
+  <center>
+    <img src="css/supportpageimages/inspired-elearning.jpg" height=55>
+  </center>
+  <br><br>
+  <div class="text-center">
+    <p class="medium">Please check your browser. This course supports the following browser versions:</p>
+  </div>
+  <br>
+
+  <ul class="box-links">
+    <li class="navigator">
+      <div class="show" id="browser_ie"></div>
+    </li>
+    <li class="navigator">
+      <div class="show" id="browser_ff"><b></b></div>
+    </li>
+    <li class="navigator">
+      <div class="show" id="browser_ch"><b></b></div>
+    </li>
+    <li class="navigator">
+      <div class="show" id="browser_sf"><b></b></div>
+    </li>
+    <li class="navigator">
+      <div class="show" id="browser_ipad"><b></b></div>
+    </li>
+    <li class="navigator">
+      <div class="show" id="browser_iphone"><b></b></div>
+    </li>
+    <li class="navigator">
+      <div class="show" id="browser_android"><b></b></div>
+    </li>
+    <!-- 	<br><br>
+      <a href="index-quiz.htm" style="color:white" >Quiz Engine</a>
+     -->  </ul>
+  <br>
+  <div class="text-center">
+    <p class="small">If you believe your computer does meet the minimum system requirements <a href="" id="redirectToPage" name="redirectToPage" target="_self">click
+      here</a> to start your course.</p>
+  </div>
+</div>
+
+</body>

@@ -1,81 +1,53 @@
 var CodeVideoPlayer = new CodeVideoPlayer();
-$.ajax({
-    type: 'POST',
-    url: "appphp/get_json.php",
-    data: {filename:'span_inline'},
-    dataType: 'JSON',
-    success: function (data) {
-        if(data.result === 'good'){
+var JsonFileList = [];
+$(document).ready(function () {
 
-            CodeVideoPlayer.CreateVideo(data.json,'VideoPlayer');
-            console.log(CodeVideoPlayer);
+    resizeControls();
+
+    $.ajax({
+        type: 'POST',
+        url: "appphp/get_json_filelist.php",
+        dataType: 'JSON',
+        success: function (data) {
+            JsonFileList = data.filelist;
+            $('#page-combo').html(JsonFileList[0]);
+            JsonFileList.forEach(function (file, number) {
+                $("#page-select-text").append('<a href="#" onclick="return false" style="font-size:14px;display:block; margin-left: 10px !important;" class="page-select-text-line-style">' + file + '</a>');
+            })
+
+            $.ajax({
+                type: 'POST',
+                url: "appphp/get_json.php",
+                data: {filename:JsonFileList[0]},
+                dataType: 'JSON',
+                success: function (data) {
+                    if(data.result === 'good'){
+
+                        CodeVideoPlayer.CreateVideo(data.json,'template-place');
+                        console.log(CodeVideoPlayer);
+
+                    }
+                }
+            })
 
         }
-    }
+    })
+
 })
 
+function resizeControls() {
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
 
 
-function ContentMapping(jsonObj) {
-    var ContentMap = [];
+    var NewTop = (windowHeight / 2) - ($("#skin-container").height() / 2);
+    if (NewTop < 5) { NewTop = 5;}
 
-    jsonObj.forEach(function (items, key) {
-        items.highlights.forEach(function (contInfo, index) {
-            var textArray = contInfo.selection.split("");
-            textArray.forEach(function (chr, number) {
-                if(typeof ContentMap[parseInt(contInfo.begin_line)] === 'undefined'){
-                    ContentMap[parseInt(contInfo.begin_line)] = [];
-                }
-                ContentMap[parseInt(contInfo.begin_line)][parseInt(contInfo.begin_ch)+number] = chr;
-            })
-        })
-    });
+    $("#page").css({"margin-top": NewTop + "px"});
 
-    ContentMap.forEach(function (line, key) {
-        for(var i=0; i<=line.length-1; i++){
-            if(typeof ContentMap[key][i] === 'undefined'){
-                ContentMap[key][i] = ' ';
-            }
-        }
-    });
+    var NewLeft = (windowWidth / 2) - ($("#skin-container").width() / 2);
+    if (NewLeft < 5) {NewLeft = 5;}
 
-    return ContentMap;
-}
-
-function WriteContentString(ContentMap) {
-    var contentString = '';
-
-    ContentMap.forEach(function (line, key) {
-        line.forEach(function (chr, index) {
-            contentString += chr;
-        });
-        contentString += "\n";
-    });
-
-    return contentString;
-}
-
-var line = 0;
-var chr = 0;
-var lastLine = 0;
-var lastChr = 0;
-function PrintOut(ContentMap) {
-    var PrintOutTimer = setInterval(function () {
-
-        $('#x'+lastChr+'y'+lastLine).css('border-right','0px');
-        $('#x'+chr+'y'+line).html(ContentMap[line][chr]).css('border-right','1px solid black');
-
-        lastChr = chr;
-        lastLine = line;
-
-        if(chr === ContentMap[line].length-1){
-            line ++;
-            chr = 0;
-        }else {
-            chr ++;
-        }
-        if(line === ContentMap.length && chr === 0){
-            clearInterval(PrintOutTimer);
-        }
-    },250);
+    $("#page").css({"margin-left": NewLeft + "px"});
+    $("#page").show();
 }

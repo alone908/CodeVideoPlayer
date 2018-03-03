@@ -134,7 +134,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
             var frameContent = '';
 
             Frame.forEach(function (line, lineKey) {
-                frameContent += '<span id="line-'+lineKey+'" style="display:block; font-size: 16px; vertical-align: text-top;">'+CodeVideoPlayer.htmlEncode(line.join(''))+'</span>';
+                frameContent += '<span id="line-'+lineKey+'" style="display:block;color: white; font-size: 16px; vertical-align: text-top;">'+CodeVideoPlayer.htmlEncode(line.join(''))+'</span>';
             })
             VideoFrame[frameKey] = frameContent;
         })

@@ -1,0 +1,136 @@
+<Settings>
+	<Launch LaunchIntroFile="true" IntroFilePath="xmls/en/menu.htm" DefaultCourseMode="video"></Launch>
+	<URLOnExit>http://www.inspiredelearning.com/inspired/request.info.htm?link=id6</URLOnExit>
+	<LicenseURL>xmls/en/expired.htm</LicenseURL>
+	<PolicyBrandingURL>http://www.inspiredelearning.com/policy.html</PolicyBrandingURL>
+
+	<LogoBranding>false</LogoBranding>
+	<PolicyBranding>false</PolicyBranding>
+
+	<AutoForwardEnabled>true</AutoForwardEnabled>
+	<AutoForwardDefaultSetting>true</AutoForwardDefaultSetting>
+	<ForwardBlink>true</ForwardBlink>
+	<DisableVolume>false</DisableVolume>
+
+	<EncryptTests>false</EncryptTests>
+	<PreTest>false</PreTest>
+	<AdaptiveTraining>false</AdaptiveTraining>
+	<FinalTest>true</FinalTest>
+	<ShowSurvey>false</ShowSurvey>
+
+	<TimerText>Timer: </TimerText>
+	<ShowTimer>false</ShowTimer>
+	<MinTime>1</MinTime>
+	<MinTimeMessage>You have to spend at least %%MinTime minutes to finish this course.</MinTimeMessage>
+
+  <UseScorm>false</UseScorm>
+	<UseScormVersion12>true</UseScormVersion12>
+	<UseScormVersion2004>false</UseScormVersion2004>
+	<UseAICC>false</UseAICC>
+  <ReviewMode>true</ReviewMode>
+	<CopyrightInfo><![CDATA[Copyright &copy; 2018 Inspired eLearning LLC.]]></CopyrightInfo>
+	<HostedOniLMS>true</HostedOniLMS>
+	<DisableExit>false</DisableExit>
+
+	<FinalFile>xmls/en/exam.xml</FinalFile>
+	<PreExamFile>xmls/en/preexam.xml</PreExamFile>
+	<ExternalJS>xmls/en/policybuttons.js</ExternalJS>
+	<BranchingFile></BranchingFile>
+
+
+	<PostGamificationToScorm>false</PostGamificationToScorm>
+	<GamificationPassingPoints>150</GamificationPassingPoints>
+	<GamificationMaxPoints>300</GamificationMaxPoints>
+	<GamificationRetakeTillPass>true</GamificationRetakeTillPass>
+
+	<FinalExamPostQuestionsScorm>true</FinalExamPostQuestionsScorm>
+	<FinalPassingPercentage>70</FinalPassingPercentage>
+	<FinalRetakeTillPass>true</FinalRetakeTillPass>
+	<FinalRetakeTries>5</FinalRetakeTries>
+
+
+	<VideoProgress>false</VideoProgress>
+	<VideoProgressCanMove>false</VideoProgressCanMove>
+
+	<BottomLogo>skins/black-unique/logo_iel-white.png</BottomLogo>
+	<TopLogo>skins/black-unique/skinimages/customer_logo.png</TopLogo>
+
+	<CourseCSSFile>xmls/en/css/course.css</CourseCSSFile>
+	<SkinCSSFile>black-unique</SkinCSSFile>
+
+	<AdaptiveCSS>xmls/en/css/preexam-stars-style.css</AdaptiveCSS>
+	<AdaptiveCSSMSIE>xmls/en/css/preexam-stars-style-msie9.css</AdaptiveCSSMSIE>
+
+	<HelpFile>xmls/en/help/help.html</HelpFile>
+	<GlossaryFile>xmls/en/glossary.xml</GlossaryFile>
+	<CourseFile>xmls/en/course.xml</CourseFile>
+
+	<Review>Review</Review>
+	<RetakeFinalExam>Retake Exam</RetakeFinalExam>
+	<Submit>Answer</Submit>
+	<Finish>FINISH</Finish>
+
+	<Help>Help</Help>
+	<Glossary>Glossary</Glossary>
+	<SaveAndExit>Save and exit</SaveAndExit>
+
+	<Volume>Volume</Volume>
+	<Mute>Mute</Mute>
+	<UnMute>Unmute</UnMute>
+
+	<Mode>Mode</Mode>
+
+	<AutoForwardText>Auto Forward</AutoForwardText>
+	<NoAutoForwardText>Don't Auto Forward</NoAutoForwardText>
+
+	<Replay>Replay</Replay>
+
+	<Prev>Previous</Prev>
+
+	<Pause>Pause</Pause>
+	<Play>Play</Play>
+
+	<Next>Next</Next>
+
+	<Progress>Page %%PageNo out of %%TotalPages - %%PageName</Progress>
+
+	<MinTimeWaitAlert>Sorry. You must spend at least %%MinTime seconds on this page.</MinTimeWaitAlert>
+	<DropDownAlert>You can only review previously viewed pages. Please select a previously viewed page.</DropDownAlert>
+	<FlatQuizAlert>Please choose the correct answer to continue with the course.</FlatQuizAlert>
+
+
+	<preExamAndText>, and </preExamAndText>
+
+	<CCText>Enable Captions</CCText>
+	<NoCCText>Disable Captions</NoCCText>
+
+	<MobileTplWidth>926</MobileTplWidth>
+	<MobileTplHeight>466</MobileTplHeight>
+	<RegularTplTop>77</RegularTplTop>
+	<RegularTplLeft>12</RegularTplLeft>
+
+	<XAPI>false</XAPI>
+	<XAPI_EndPoint>http://lrs.space/data/xAPI/</XAPI_EndPoint>
+	<XAPI_User>f475755b5a349cab64f5ab99f99604a32dd73a06</XAPI_User>
+	<XAPI_Password>a4e7b85e74ec5b9d2078e3da4d475bd7a406f2de</XAPI_Password>
+	<XAPI_ActorEMail>me@me.com</XAPI_ActorEMail>
+
+	<!--<CourseTime>
+
+		 <Course Length="60">
+
+			 <Sections>
+			   <Section ID="1" Length="20"></Section>
+			   <Section ID="2" Length="15"></Section>
+			   <Section ID="3" Length="10"></Section>
+			   <Section ID="4" Length="15"></Section>
+			   </Sections>
+
+		</Course>
+
+	</CourseTime>-->
+
+
+  <MobileReady>true</MobileReady>
+  <MobileOffline>true</MobileOffline>
+</Settings>

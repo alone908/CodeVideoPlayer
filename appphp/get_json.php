@@ -7,10 +7,10 @@
  */
 
 $filename = $_POST['filename'];
-$file = '../json/'.$filename.'.json';
+$file = '../json/'.$filename;
 
 if(is_file($file)){
-    $content = file_get_contents('../json/'.$filename.'.json');    
+    $content = file_get_contents('../json/'.$filename);
     echo json_encode(array('result'=>'good','json'=>$content));
 }else{
     echo json_encode(array('result'=>'bad','msg'=>'can not find file.'));

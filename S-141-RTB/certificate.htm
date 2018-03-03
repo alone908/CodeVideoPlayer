@@ -1,0 +1,216 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/completion-certificate.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700|Yantramanav:400,300,700|Oswald:300|Raleway:400,400i" rel="stylesheet"> 
+
+var mStudentName = '';
+var mLanguage="";
+var mScore = '';
+var mCertDate,mStrMonthLength;
+var mStrMonthDateYear=new String();
+
+var cert_CertificateCompletion = '';
+var cert_HasCompleted = '';
+var cert_Course = '';
+var cert_Score = '';
+var cert_CompletedOn = '';
+var cert_CertificateNumber = '';
+
+mStudentName = unescape(getParameterByName("studentname"));
+mScore = getParameterByName("score");
+mLanguage = getParameterByName("lang");
+if(mLanguage=="") { mLanguage="en"; }
+
+dt = new Date();   //Gets today's date right now (to the millisecond).
+mMonth = dt.getMonth()+1;
+mDay = dt.getDate();
+mYear = dt.getFullYear();
+	
+mStrMonthDateYear=GetMonthString(mMonth) +' '+mDay+', '+mYear
+var mRandomNumber=GetRandomNumber();
+var mCertNumber=new String();
+mCertNumber=COURSE_CODE+'-'+mRandomNumber+'-'+mDay+mMonth+mYear
+
+function GetRandomNumber(){
+	var mRNumber=Math.random()*10;
+	var mRandNumber=new String();
+	var mRandLength;
+	mRandNumber=mRNumber.toString();
+	mRandLength=mRandNumber.length;
+	if (mRandLength>11){
+		mRNumber=parseInt(mRandNumber.substring(3,11))
+	}
+	else{
+		mRNumber=parseInt(mRandNumber.substring(3,mRandLength-1))
+	}
+	if (mRNumber>0){
+		mRandNumber=mRNumber.toString();
+		mRandLength=mRandNumber.length;
+		if (mRandLength<8){
+			return GetRandomNumber();
+		}
+		else{
+			return mRNumber;
+		}
+	}
+	else{
+		return GetRandomNumber();
+	}
+}
+
+function GetMonthString(pMonth){
+	pMonth=parseInt(pMonth);
+	if (pMonth==1)
+		return "January";
+	else if(pMonth==2)
+		return "February";
+	else if(pMonth==3)
+		return "March";
+	else if(pMonth==4)
+		return "April";
+	else if(pMonth==5)
+		return "May";
+	else if(pMonth==6)
+		return "June";
+	else if(pMonth==7)
+		return "July";
+	else if(pMonth==8)
+		return "August";
+	else if(pMonth==9)
+		return "September";
+	else if(pMonth==10)
+		return "October";
+	else if(pMonth==11)
+		return "November";
+	else if(pMonth==12)
+		return "December";
+}
+
+function getParameterByName(name)
+{
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+//------------------------------------------------------------------------------------------------------------------
+
+function LoadCertificateXML()
+{
+	$.ajax({
+		type: "GET",
+		url: "xmls/"+mLanguage+"/certificate.xml?time="+Math.round(+new Date()/1000),
+		dataType: "xml",
+		success: SaveCertificateXML
+	});
+}
+function SaveCertificateXML(xml)
+{
+	CertificateXML = xml;
+	parseCertificateXml(CertificateXML);
+}
+
+function parseCertificateXml(xml)
+{
+	cert_CertificateCompletion = $(xml).find("CertificateOfCompletion").text();
+	cert_HasCompleted = $(xml).find("HasCompleted").text();
+	cert_Course = $(xml).find("Course").text();
+	cert_Score = $(xml).find("Score").text();
+	cert_CompletedOn = $(xml).find("CompletedOn").text();
+	cert_CertificateNumber = $(xml).find("CertificateNumber").text();
+	DisplayCertificate();
+}
+
+function DisplayCertificate()
+{
+	if(mLanguage == "" || mLanguage == "en")
+	{
+		$("#row1").html("<img src='css/certificate/certificate-text-1.gif' width='338' height='40' hspace='0' vspace='6'>");
+		$("#row3").html("<img src='css/certificate/certificate-text-2.gif' width='268' height='29' hspace='0' vspace='6'>");
+	}
+	else
+	{
+		$("#row1").html(cert_CertificateCompletion);
+		$("#row3").html("<br>" + cert_HasCompleted + "<br>");
+	}
+	
+	$("#row2").html(mStudentName);
+	$("#row4").html(cert_Course + ": " + COURSE_NAME);
+	if(DISPLAY_SCORE_ON_CERTIFICATE) { $("#row5").html(cert_Score + ": " + mScore); }
+	$("#row6").html(cert_CompletedOn + ": " + mStrMonthDateYear);
+	$("#row7").html(cert_CertificateNumber + "<br>" + mCertNumber);
+	
+	print();
+}
+
+</script>
+<style>
+
+.certHeading1{
+	font-family:verdana;
+	font-size:18pt;
+}
+
+.certHeading2{
+	font-family:verdana;
+	font-size:14pt;
+}
+
+.certNormal{
+	font-family:verdana;
+	font-size:10pt;
+}
+
+
+</style>
+</head>
+<body>
+<table align='center' width='600'  border='0' cellpadding='0' cellspacing='0'>
+<tr>
+	<td colspan='3'>
+	<img src="css/certificate/border-top.jpg"  width='600' height='50'>
+	</td>
+</tr>
+<tr>
+	<td width='50'>
+	<img src="css/certificate/border-left.jpg"  width='50' height='357'>
+	</td>
+	<td valign='top'>
+	<div align='center'>
+	<div id="row1" class="certHeading1"></div>
+	<img src="css/certificate/certificate_logo.jpg">
+	<br><br>
+	<div id="row2" class="certNormal"></div>
+	<div id="row3" class="certHeading2"></div>
+	<div id="row4" class="certNormal"></div>
+	<br>
+	<div id="row5" class="certNormal"></div>
+	<div id="row6" class="certNormal"></div>
+	<br>
+	<div id="row7" class="certNormal"></div>
+	</div>
+	</td>
+	<td width='50' align = 'right'><img src="css/certificate/border-right.jpg" width='51' height='357'></td>
+</tr>
+<tr>
+	<td colspan='3'>
+	<img src="css/certificate/border-bottom.jpg" width='600' height='50'>
+	</td>
+</tr>	 
+</table>												    			 
+<script>
+$(document).ready(function() {
+	LoadCertificateXML(); //no delay needed
+});
+</script>
+</body>
+</html>

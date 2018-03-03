@@ -1,0 +1,293 @@
+<Glossary Name="The Web 2.0 Glossary">
+	<Terms>
+		<Term Name="Access Control List (ACL)"><![CDATA[  A security network mechanism used to regulate the accessibility and flow of information.]]></Term>
+
+		<Term Name="Account Lockout"><![CDATA[  The control that disables a users account after a certain number of failed logon attempts. This is an effective countermeasure to brute force and dictionary attacks against a system's logon prompt.]]></Term>
+
+		<Term Name="Accounting and Tax Documents"><![CDATA[  This type of data typically includes, but is not limited to, accounting records, such as invoices, inventory, accounts payable and payroll, and annual financial statements, the general ledger, audit records, insurance policies, federal, state, and property tax documents, and documents relating to retirement or fixed asset returns.]]></Term>
+
+		<Term Name="ActiveX"><![CDATA[  ActiveX components are small programs downloaded from the Internet and run within your browser.]]></Term>
+
+		<Term Name="Administrative Correspondence"><![CDATA[  Internal or external correspondence relating to our organization’s revenue, expenses, policies, or legal issues.]]></Term>
+
+		<Term Name="Anti-Virus Software"><![CDATA[  A computer and network scanning software that detects and corrects destructive programs such as Viruses, Worms, and Trojan Horses.]]></Term>
+
+		<Term Name="Applet"><![CDATA[  The code objects a server sends to a client to perform some action.  The applets execute independently of the server who sent them.]]></Term>
+
+		<Term Name="Asymmetric Key"><![CDATA[  Cryptologic key solutions for public key cryptosystems provided by algorithms.]]></Term>
+
+		<Term Name="Attack"><![CDATA[  An attempt to alter, release, or deny data when trying to bypass security controls on a computer. The vulnerability of the computer system and the effectiveness of existing countermeasures decide whether the attack will succeed. ]]></Term>
+
+		<Term Name="Auditing"><![CDATA[  A methodical examination or review of an environment to detect abnormalities, unauthorized occurrences, or crimes.]]></Term>
+
+		<Term Name="Audit Log"><![CDATA[  A record of computer activity, such as email usage, web sites visited, etc., based on username and IP address.]]></Term>
+
+		<Term Name="Authentication"><![CDATA[  To verify the identity of a user, device, or system. ]]></Term>
+
+		<Term Name="Availability"><![CDATA[  Assurance that requested information and communication services will be available. ]]></Term>
+
+		<Term Name="Awareness"><![CDATA[  Security teaching aimed toward bringing security into the forefront and making it recognizable for students/users.]]></Term>
+
+		<Term Name="Back Door"><![CDATA[  A hole deliberately left by an attacker within the security of a computer or network.]]></Term>
+
+		<Term Name="Backup"><![CDATA[  A copy of an important file stored on removable media such as a hard drive, DVD, Tape Drive, etc.]]></Term>
+
+		<Term Name="Badges"><![CDATA[  Form of ID such as electronic access control devices, nametag, smart card.]]></Term>
+
+		<Term Name="Best Practice"><![CDATA[  A process identified as being most effective and efficient.]]></Term>
+
+		<Term Name="Biometrics"><![CDATA[  Authentication factors by using human physiological or behavioral characteristics for logical access and identification for physical access.]]></Term>
+
+		<Term Name="Breach"><![CDATA[  The compromise of a computer or network resulting from the successful defeat of security controls.  ]]></Term>
+
+		<Term Name="Brute Force Attack"><![CDATA[  Attacking a system to access the password to a known identity by using a systematic trial of all possible character combinations.]]></Term>
+
+		<Term Name="Bug"><![CDATA[  A defect of code or routine in a computer program.]]></Term>
+
+		<Term Name="Business Continuity Planning"><![CDATA[  The process of preparing contingency plans for major incidents such as natural disasters, and other traumatic events to ensure minimal disruption to an organization’s operations and its clients.
+		]]></Term>
+
+		<Term Name="Cardholder Data"><![CDATA[  Hard copy information relating to customer credit cards, such as the original signed credit card slip.]]></Term>
+
+		<Term Name="Challenge Response Password Reset"><![CDATA[  Used to reset account access after a personal account is locked because a password was entered incorrectly multiple times. The Challenge Response Password Reset asks for previously supplied personal information of the account user to authenticate the user and to reset account access.]]></Term>
+
+		<Term Name="CIA Triad"><![CDATA[  The three fundamental security principles of confidentiality, integrity, and availability. All three are fundamental to provide and establish a secure environment.]]></Term>
+
+		<Term Name="Clear Desk Policy"><![CDATA[  Designed to prevent other from viewing or gaining access to confidential information by logging off of your computer when unattended and keeping your desk area clear of confidential documents.]]></Term>
+
+		<Term Name="Computer"><![CDATA[  A programmable electronic machine that performs high-speed mathematical or logical operations or that assembles, stores, correlates, or otherwise processes information, including input, output, processing, and storage components.]]></Term>
+
+		<Term Name="Computer Crime"><![CDATA[  Any crime committed using a computer.]]></Term>
+
+		<Term Name="Computer Fraud and Abuse Act"><![CDATA[  To avoid infringing upon states' rights, the United States created a law that exclusively covers computer crimes that cross state boundaries.]]></Term>
+
+		<Term Name="Computer Security"><![CDATA[  Technology and procedures used to ensure Confidentiality, Integrity, Availability and Accountability of information as managed by the computer.]]></Term>
+
+		<Term Name="Computer Security Act (CSA) of 1987"><![CDATA[  Baseline security requirements for all federal agencies mandated by the United States. ]]></Term>
+
+		<Term Name="Computer Security Incident"><![CDATA[  An intrusion or attempted intrusion into an automated information system (AIS) which may occur in multiple systems simultaneously.]]></Term>
+
+		<Term Name="Confidential"><![CDATA[  The classification by the government and military for information that is confidential.  Damage to national security will occur if there is unauthorized disclosure of confidential data.  This classification is used for all data between Secret and Sensitive but not Unclassified classifications. ]]></Term>
+
+		<Term Name="Confidentiality"><![CDATA[  The assurance that information will only be accessed by an authorized user.]]></Term>
+
+		<Term Name="Cookie"><![CDATA[  A cookie is a text file that stores certain information that is used the next time you visit that web page.]]></Term>
+
+		<Term Name="Corporate Documents"><![CDATA[  Documents that define our organization’s scope of work, expressions of professional opinions, research and reference materials, i.e. proposals, board minutes, resolutions, etc.]]></Term>
+
+		<Term Name="Countermeasures"><![CDATA[  The reduction of the vulnerability a computer or network faces by the use of actions, devices, techniques, procedures, or other measures.]]></Term>
+
+		<Term Name="Cover-up"><![CDATA[  An attempt to conceal the evidence of wrongdoing.]]></Term>
+
+		<Term Name="Crash"><![CDATA[  The abrupt shutdown of a computer system.]]></Term>
+
+		<Term Name="Customer Data"><![CDATA[  Includes, but is not limited to, account history, notes, personally identifiable information such as name and address, and billing information.]]></Term>
+
+		<Term Name="Cryptography"><![CDATA[  Encoding data into unintelligible messages that can only be decoded by specific individuals.  ]]></Term>
+
+		<Term Name="Data"><![CDATA[  A set of facts, concepts, instructions suitable for communication (Electronic or paper).]]></Term>
+
+		<Term Name="Data Lifecycle"><![CDATA[ The life of a piece of information, whether in a digital or paper format, from creation to destruction within our organization.]]></Term>
+
+		<Term Name="Data Owner"><![CDATA[  The individual responsible for the accuracy, integrity, and access to data.]]></Term>
+
+		<Term Name="Data Protection Act"><![CDATA[ A United Kingdom law that mandates that any organization that holds personal data take precautions to protect it from unauthorized viewing or modification and provides penalties for organizations who fail to do so. ]]></Term>
+
+		<Term Name="Data Storage"><![CDATA[  The act of saving electronic, audio/visual, oral, and written information to an electronic or conventional location for archival purposes.]]></Term>
+
+		<Term Name="Data Transmission"><![CDATA[  The act of sending electronic, audio/visual, oral, and written information to a specified location(s).]]></Term>
+
+		<Term Name="Decrypt"><![CDATA[  Reversing the cryptographic algorithm that has been encrypted.]]></Term>
+
+		<Term Name="Denial of Service (DoS)"><![CDATA[  The prevention of a legitimate use of a computer or network cause by an attacker.  This prevention can be sometimes caused by so much data being transmitted that a server cannot process it all.]]></Term>
+
+		<Term Name="Dictionary Attack"><![CDATA[   An attack whereby every word in a dictionary is used as a password for a given user account.  If the password can be found in a dictionary then it is subject to cracking by a Dictionary Attack.  ]]></Term>
+
+		<Term Name="Disaster"><![CDATA[  An event that causes great damage, loss, or destruction to a system or environment.]]></Term>
+
+		<Term Name="Dumpster Diving"><![CDATA[   Digging through the refuse, remains, or leftovers of an organization or operation in order to gather information about that organization.
+		]]></Term>
+
+		<Term Name="Eavesdropping"><![CDATA[   Capturing and recording network transmissions such as: emails, instant messages, and files.  Also, includes recording and listening to audio communications, faxes, radio signals, etc.]]></Term>
+
+		<Term Name="Electronic Communications Privacy Act"><![CDATA[  A U.S. law that makes it illegal to intercept wire, oral or electronic communications during transmission or storage, including email.  This means that personal use or spyware or other monitoring devices to monitor another person is illegal.]]></Term>
+
+		<Term Name="Encrypt"><![CDATA[  Conversion of a message into ciphertext.]]></Term>
+
+		<Term Name="Encryption"><![CDATA[  The process of converting plaintext to cipher (encrypted) text in order to prevent any but the intended recipient from reading the data.]]></Term>
+
+		<Term Name="Espionage"><![CDATA[  The act of stealing proprietary, secret, private, sensitive, or confidential information about one organization with the intent of giving it to a competitor or another interested organization.]]></Term>
+
+		<Term Name="EU Directive on Data Protection"><![CDATA[ This European Union law harmonizes privacy standards among member states in order to remove obstacles to the free flow of personal data within the EU without diminishing the protection of personal data.  It covers the collection, storage and disclosure of personal data and also contains safeguards and requirements for transferring personal data outside the EU.]]></Term>
+
+		<Term Name="European Union (EU)"><![CDATA[ The group of over a dozen European countries committed to working together to promote economic, political and social cooperation.]]></Term>
+
+		<Term Name="Ethics"><![CDATA[  The rules that several organizations have recognized that govern personal conduct.  These rules are not laws but are standard guidelines for ethical behavior.]]></Term>
+
+		<Term Name="Firewall"><![CDATA[  A piece of computer software intended to prevent unauthorized access from outside Internet users to the local protected network. ]]></Term>
+
+		<Term Name="Fiscal Correspondence"><![CDATA[  Internal or external correspondence relating to our organization’s revenue, expenses, policies, or legal issues.]]></Term>
+
+		<Term Name="Fourth Amendment"><![CDATA[  The U.S. constitution amendment that prohibits government agencies from searching private property without a warrant and probable cause.  This also includes protections against wiretapping and other invasions of privacy.]]></Term>
+
+		<Term Name="General Correspondence"><![CDATA[  Correspondence relating to our organization’s direction, operation, or business relationships.]]></Term>
+
+		<Term Name="Gramm-Leach-Bliley (GLB) Act"><![CDATA[  A law that eased the governmental barriers between financial institutions.  This law was passed in 1999.  The law relaxed the regulations on services that banks, insurance companies, and credit card providers could provide.]]></Term>
+
+		<Term Name="Hacker"><![CDATA[  An individual who attempts to gain unauthorized access to a computer system.  ]]></Term>
+
+		<Term Name="Hacking"><![CDATA[  Attempts to bypass computer security controls.]]></Term>
+
+		<Term Name="Hardware"><![CDATA[  The physical components and devices that make up a computer system.]]></Term>
+
+		<Term Name="Health Insurance Portability and Accountability Act (HIPAA)"><![CDATA[ A law designed to ensure the health care industry takes steps to protect the privacy of individual's health information, including information stored in digital format. This information must be protected both while being stored and in transit.]]></Term>
+
+		<Term Name="Human Firewall"><![CDATA[  An end user who can recognize, respond to and prevent information security incidents.]]></Term>
+
+		<Term Name="Identity Theft"><![CDATA[  The crime of obtaining another person’s personal or financial information, or other identifying documents, in order to commit financial fraud and other criminal activities using their identity.]]></Term>
+
+		<Term Name="Incident"><![CDATA[  An event that causes a disruption in operation or a computer or network component.]]></Term>
+
+		<Term Name="Information Security"><![CDATA[  Information security encompasses all the ways in which we protect our information ASSETS and CAPABILITIES from unauthorized access, modification or destruction, and other forms of attack.]]></Term>
+
+		<Term Name="Information Security Policies"><![CDATA[  Information Security policies are a set of rules and practices that define how information resources are protected and therefore set the level of security for an organization.]]></Term>
+
+		<Term Name="Instant Messaging"><![CDATA[  Instant messaging or IM is a software client that sends short text messages, files and even phone conversations over the Internet.]]></Term>
+
+		<Term Name="Integrity"><![CDATA[  The assurance that information will not be accidentally or maliciously tampered with or destroyed.]]></Term>
+
+		<Term Name="Intellectual Property"><![CDATA[  Intangible assets such as special processes, recipes, content or other "ideas" that are considered to be owned by a person or entity.  ]]></Term>
+
+		<Term Name="Intranet"><![CDATA[  A private network that uses Internet technologies such as web pages and web servers.  ]]></Term>
+
+		<Term Name="Keystroke Monitoring"><![CDATA[  The act of recording the keystrokes a user performs on a physical keyboard.]]></Term>
+
+		<Term Name="Local Area Network (LAN)"><![CDATA[  A network of computers and peripheral devices linked for communication within a limited area, such as an office.  ]]></Term>
+
+		<Term Name="Litigation Hold"><![CDATA[  A litigation hold is a suspension of an organization's document retention/destruction policies for those documents that may be relevant to a lawsuit.]]></Term>
+
+		<Term Name="Litigation Related Documents"><![CDATA[  Any information which is or can be relevant to future litigation.]]></Term>
+
+		<Term Name="Logging"><![CDATA[  Using a log file or database to record event information as they occur.  ]]></Term>
+
+		<Term Name="Malware"><![CDATA[  Stands for "malicious software" and includes any program or file that is designed to do harm, including viruses, worms, trojan horses and spyware.]]></Term>
+
+		<Term Name="Memory (Computer Memory)"><![CDATA[  The temporary data recording facility of computers such as Random Access Memory (RAM).]]></Term>
+
+		<Term Name="Mitigated"><![CDATA[  The process taken to remove a risk.]]></Term>
+
+		<Term Name="Mobile Data"><![CDATA[  Data stored on a portable storage devices such as: laptops, personal digital assistants (PDA’s), smart phones, flash memory sticks (thumb drives), MP3 players, iPods, digital cameras, etc.]]></Term>
+
+		<Term Name="Modem"><![CDATA[  An electronic device that connects computers via a telephone line, allowing the exchange of information over the public switched telephone network (PSTN).]]></Term>
+
+		<Term Name="Network"><![CDATA[  A system of two or more computers or devices linked together in order to exchange data.  ]]></Term>
+
+		<Term Name="Network Security"><![CDATA[  The process of protecting computer networks from unauthorized access, modification, destruction, of disclosure of information.]]></Term>
+
+		<Term Name="Operating System (OS)"><![CDATA[  The primary program that controls and coordinates the use of all computers resources. Through an OS, multiple software applications can be run and other functions performed. Examples included: Windows XP, Linux, and Mac OS X.]]></Term>
+
+		<Term Name="Operating System Updates"><![CDATA[  Commonly referred to as patches, they are designed to stop hackers and malicious software from exploiting vulnerabilities in the operating system software.]]></Term>
+
+		<Term Name="Packet"><![CDATA[  Data that is sent over a network between devices.]]></Term>
+
+		<Term Name="Password"><![CDATA[  A string of characters used in conjunction with a username to gain access to a computer system.]]></Term>
+
+		<Term Name="Password Cracker"><![CDATA[  A password cracker program can be used to guess your password by trying thousands of combinations of numbers, letters and special characters per second.]]></Term>
+
+		<Term Name="Password Policy"><![CDATA[  A set of rules that regulate password requirements, such as the password length and complexity, the frequency at which passwords must be changed and the number of bad password attempts are allowed before an account is locked out.  ]]></Term>
+
+		<Term Name="Penetration"><![CDATA[  The achievement of unauthorized access to a computer system.]]></Term>
+
+		<Term Name="Personal Information Protection and Electronic Documents Act (PIPEDA)"><![CDATA[ A federal Canadian law in which covered organizations must obtain an individual's consent when they collect, use or disclose the individual/s personal information. The individual has the right to access personal information held by an organization and to challenge its accuracy, if need be. This law requires that personal information only be used for the perused for which it was collected.]]></Term>
+
+		<Term Name="Personnel Data"><![CDATA[  This type of data typically includes, but is not limited to, applications for employment and interview results, accident reports and payroll information, such as disability benefit records and income tax withholdings, employee performance data, such as promotions, disciplinary warnings and demotions, information regarding employee manuals, employment and termination agreements, terminated employee files, employee medical histories, health data, and earnings records.]]></Term>
+
+		<Term Name="Phishing"><![CDATA[  The deceptive practice of sending fake emails, disguised as messages from legitimate businesses, for the purpose of acquiring personal account information from those who reply.]]></Term>
+
+		<Term Name="Physical Security Data"><![CDATA[  This type of data typically includes, but is not limited to, security related videotapes, digital documentation, and incident reports.]]></Term>
+
+		<Term Name="Plaintext"><![CDATA[  As opposed to "cyphertext" is plainly readable and not encrypted.]]></Term>
+
+		<Term Name="Privacy"><![CDATA[  Assuring that personal information about an individual or an organization is not disclosed.]]></Term>
+
+		<Term Name="Privacy Act of Australia"><![CDATA[ This Australian act covers the public, private and health sectors and includes &quot;10 National Privacy Principles&quot; that must be followed.  The act governs how organizations should collect, store, use and disclose personal information and gives certain rights to Australian citizens, such as the right to know what information an organization holds about them and the right to correct it if it is wrong. ]]></Term>
+
+		<Term Name="Public"><![CDATA[  The lowest level of information classification corresponding to for data that will not negatively impact an organization if disclosed.]]></Term>
+
+		<Term Name="Public Statements"><![CDATA[  Statements made to the public, whether made by Public Relations or an executive.]]></Term>
+
+		<Term Name="Random Access Memory (RAM)"><![CDATA[  Short term computer memory that retains its information only as long as power is supplied to it.]]></Term>
+
+		<Term Name="Remote Access"><![CDATA[  The ability to connect an organizations network from outside of its physical boundaries using an Internet connection. When accessing a network remotely, the same rules of appropriate use apply as when accessing the system in the office.]]></Term>
+
+		<Term Name="Risk"><![CDATA[  The probability that a threat will exploit a vulnerability.  Risk = threat + vulnerability.]]></Term>
+
+		<Term Name="Risk Assessment"><![CDATA[  Studying the threats and vulnerabilities to an organization, their likelihood and impact and the effectiveness of security controls.]]></Term>
+
+		<Term Name="Risk Management"><![CDATA[  This is the process of identifying the factors that could cause damage to information security and implementing solutions to reduce that risk.]]></Term>
+
+		<Term Name="Router"><![CDATA[  The device that connects two or more computer networks.]]></Term>
+
+		<Term Name="Secret"><![CDATA[  A classification used for data of a secret nature by the government and military. Disclosure of this data could damage an organization. ]]></Term>
+
+		<Term Name="Sensitive"><![CDATA[  This classification is more sensitive than public data and is used for information which could have a negative impact if it were disclosed. ]]></Term>
+
+		<Term Name="Shoulder Surfing"><![CDATA[  Gathering information from a system by observing an operator use a monitor and keyboard. ]]></Term>
+
+		<Term Name="Smart Card"><![CDATA[  A credit-card-sized ID, badge, or security pass that contains information about the authorized bearer on a magnetic strip, bar code, or integrated circuit chip. It can be used for identification and/or authentication purposes. ]]></Term>
+
+		<Term Name="Sniffer Attack"><![CDATA[  An attack in which a malicious user gathers information about a network or the traffic of a network by "sniffing" or viewing the actual data packets as they traverse the network. ]]></Term>
+
+		<Term Name="Sober Worm"><![CDATA[  An email worm, which once infected on your computer, attempts to disable your computers security, and email itself to all email contacts found on your computer.]]></Term>
+
+		<Term Name="Social Engineering"><![CDATA[  A method of gaining information by fooling a victim into releasing sensitive data, for example, by calling someone, claiming to be technical support and asking for their password in order to "verify" it. ]]></Term>
+
+		<Term Name="Software"><![CDATA[  Computer programs and applications that can be run on a particular computer system. ]]></Term>
+
+		<Term Name="Spam"><![CDATA[  The term used for unsolicited emails, advertisement, messages, newsgroups, or discussion forum messages. ]]></Term>
+
+		<Term Name="Spyware"><![CDATA[  Malicious software that is secretly installed on your computer. It is designed to send a record of your computer activity, passwords, and other confidential information to the program’s creator. ]]></Term>
+
+		<Term Name="Strong Password"><![CDATA[  A password that is unaffected by dictionary and brute force attacks.]]></Term>
+
+		<Term Name="Technical Documents"><![CDATA[  These include, but are not limited to, original patents, trademark and copyright registrations and supporting documentation, notes and test data.]]></Term>
+
+		<Term Name="Threat"><![CDATA[  The potential violation of security or intent to affect a computer, network, facility, individual, or operation.]]></Term>
+
+		<Term Name="Threat Agents"><![CDATA[  People, programs, hardware, or systems that deliberately exploit vulnerabilities.]]></Term>
+
+		<Term Name="Top Secret"><![CDATA[  The highest level classification used by the government and military.  Grave damage will occur if this information is disclosed.]]></Term>
+
+		<Term Name="Trade Secret"><![CDATA[  Intellectual property that is essential to a business and would cause significant damage if competitors or the public obtained access to it.]]></Term>
+
+		<Term Name="Trademark"><![CDATA[  The logo, word, or slogan used to recognize a company and its products or services.]]></Term>
+
+		<Term Name="Trojan Horse"><![CDATA[  A computer program containing a hidden function or program that causes damage to other programs.]]></Term>
+
+		<Term Name="Two Factor Authentication"><![CDATA[  One of the authentication devices you may see is an access token, which uses a powerful algorithm to generate a new code, usually every 60 seconds, that must be used in conjunction with a password.
+		]]></Term>
+
+		<Term Name="Unclassified"><![CDATA[  The lowest level of classification used by the government and military.  The disclosure of this data will not harm an organization in any way.
+		]]></Term>
+
+		<Term Name="Virtual Private Network (VPN)"><![CDATA[  Typically used by organizations spread over large geographic areas, a VPN is used to extend a network to remote offices and users by employing a secure and private connection over the internet.]]></Term>
+
+		<Term Name="Virus"><![CDATA[  A program that may be destructive and can usually spread to other computers once it is executed.]]></Term>
+
+		<Term Name="Vulnerability"><![CDATA[  A weakness in procedures, security controls, a computer program or the physical layout that could be exploited.]]></Term>
+
+		<Term Name="War Dialing"><![CDATA[  The use of a modem to search for a computer system that will allow inbound connection tempts.]]></Term>
+
+		<Term Name="Warning Banners"><![CDATA[  This is a text message displayed before logging on to a computer stating that would-be intruders will be monitored or audited because their activities are restricted. ]]></Term>
+
+		<Term Name="WEP Encryption"><![CDATA[  An early form of encryption used to secure wireless network transmissions. The 64-bit and 128-bit WEP encryption settings slow network transmissions and are fairly easy to crack for an experienced Hacker. WPA is a newer and more reliable form of wireless encryption.]]></Term>
+
+		<Term Name="Wide Area Network (WAN)"><![CDATA[  A group of computers or networks linked by cable over a broad geographic area.  A connection to the Internet is considered a Wide Area Network connection.  ]]></Term>
+
+		<Term Name="Worm"><![CDATA[  A malicious independent program that travels from one computer to the next without any direction from the user.]]></Term>
+
+		<Term Name="WPA Encryption"><![CDATA[  WPA (WiFi Protected Access) protects wireless network transmissions by encrypting the radio signal to ensure that a hacker cannot read an intercepted signal. WPA offers greater security and performance than the older WEP encryption standard.]]></Term>
+
+		<Term Name="Zombie Computer"><![CDATA[ A computer that has been infected by malware or hacked in such a way that the hacker can remotely access and control the computer.]]></Term>
+	</Terms>
+</Glossary>

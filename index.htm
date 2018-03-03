@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>CodeVideoPlayer</title>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/CodeVideoPlayer.js"></script>
+    <script src="js/index.js"></script>
+
+    <link href="css/black-unique/black-unique.css" rel="stylesheet" type="text/css">
+    <link href="css/course.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<BODY>
+
+<div name="page" id="page" style="position:absolute; display:none">
+    <div id="skin-container" class="skin-background-780x510">
+
+        <div id="template-place" class="template-space"></div>
+
+        <div id="FadeOutBackgroundDiv" class="CourseDefaultFadeOutBackground" style="display:none"></div>
+        <div id="CourseDialogContainerDiv" class="CourseDefaultDialogContainer">
+            <div id="CourseDialogHeaderDiv" class="CourseDefaultDialogHeader"></div>
+            <div id="CourseDialogContentDiv" class="CourseDefaultDialogContent"></div>
+        </div>
+        <div id="FadeOutBackgroundDiv2" class="CourseDefaultFadeOutBackground" style="display:none; z-index:101"></div>
+        <div id="FreeFormDialogDiv" class="FreeFormDialogBaseCSS" style="display:none"></div>
+
+        <div id="custom-logo" class="custom-logo-style"><img src="css/black-unique/skinimages/brand_logo.png" style="width:150px; height: 61px;"></div>
+        <div id="product-logo" class="product-logo-style"><img src="css/black-unique/skinimages/brand_logo.png" style="width:208px; height: 60px;"></div>
+
+        <div id="copyright-text" class="copyright-text-style">Copyright © 2018 Elo Software </div>
+        <div id="version-text" class="version-text-style">v1.0.0</div>
+
+        <div id="course-header" class="course-header-style">Code Video Player</div>
+        <div id="module-name" class="module-name-style">Selet JSON File:</div>
+        <a href="#" onclick="return false" id="page-combo" class="page-combo-style" style="color:white"></a>
+
+        <div id="mode-box" class="mode-box-style" style="display:none;">
+            <div style="padding:5px; text-align:center; font-weight:bold" id="mode-box-text"></div>
+        </div>
+
+        <a id="mode-button" class="skin-button mode-button-style" href="#" onclick="return false"></a>
+        <a id="replay-button" class="skin-button replay-button-style" href="#" onclick="return false"></a>
+
+        <a id="backward-button" href="#" class="skin-button backward-button-style" onclick="return false"></a>
+        <a id="play-button" href="#" class="skin-button play-button-style" onclick="return false"></a>
+        <a id="forward-button" href="#" class="skin-button  forward-button-style" onclick="return false"></a>
+
+
+
+
+    </div>
+
+    <div id="page-select" class="page-select-style">
+        <div id="page-select-middle" class="page-select-middle-style">
+            <div id="page-select-text" class="page-select-text-style">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

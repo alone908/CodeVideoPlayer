@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta name="title" content="iEngine v5.0">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=yes, minimum-scale=0.50, maximum-scale=1.5">
+
+	<title>Inspired eLearning</title>
+	<script>
+		var CourseMode = "Fast";
+		var FlashFrameInterval = 1;
+		var isMobile = false;
+		window.addEventListener('touchmove', function () {
+		});
+	</script>
+
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.ui.touch-punch.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/jquery.timer.js?q=500" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.timer2.js?q=500" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/jsencryption.js?q=500"></script>
+
+	<script src="jplayer/jquery.jplayer.min.js" type="text/javascript"></script>
+	<link href="jplayer/skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css">
+
+	<script src="js/DragDropTouch.js" type="text/javascript" charset="utf-8"></script>
+	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css">
+
+	<script src="js/course-engine.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-iEngineScript.js?q=500" type="text/javascript"></script>
+
+	<script src="js/course-engine-quiz-interactive.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-quiz-flat.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-quiz-bumpy.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-final-exam.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-pre-exam.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-survey.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-flash.js?q=500" type="text/javascript"></script>
+
+	<script src="js/course-engine-quiz.js?q=500" type="text/javascript"></script>
+
+	<script src="js/course-engine-slide.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-policy.js?q=500" type="text/javascript"></script>
+
+	<script src="js/course-engine-dialog-buttons.js?q=500" type="text/javascript"></script>
+	<script src="js/course-engine-tabs.js?q=500" type="text/javascript" charset="utf-8"></script>
+
+  <script src="scorm/globalvariable.js?q=500" type="text/javascript"></script>
+  <script src="scorm/language.js?q=500" type="text/javascript"></script>
+	<script src="scorm/apiwrapper.js?q=500" type="text/javascript"></script>
+	<script src="scorm/apiwrapper_2004.js?q=500" type="text/javascript"></script>
+	<script src="js/completion-certificate.js?q=500" type="text/javascript"></script>
+	<script src="js/scorm.js?q=500" type="text/javascript"></script>
+	<script src="js/scorm_2004.js?q=500" type="text/javascript"></script>
+
+</head>
+
+<BODY onbeforeunload="unloadPage()" onunload="unloadPage()">
+
+<div name="page" id="page" style="position:absolute; display:none">
+	<div id="skin-container" class="skin-background-780x510">
+
+		<div id="template-place" class="template-space"></div>
+
+		<div id="FadeOutBackgroundDiv" class="CourseDefaultFadeOutBackground" style="display:none"></div>
+		<div id="CourseDialogContainerDiv" class="CourseDefaultDialogContainer">
+			<div id="CourseDialogHeaderDiv" class="CourseDefaultDialogHeader"></div>
+			<div id="CourseDialogContentDiv" class="CourseDefaultDialogContent"></div>
+		</div>
+		<div id="FadeOutBackgroundDiv2" class="CourseDefaultFadeOutBackground" style="display:none; z-index:101"></div>
+		<div id="FreeFormDialogDiv" class="FreeFormDialogBaseCSS" style="display:none"></div>
+
+		<div id="custom-logo" class="custom-logo-style"></div>
+		<div id="product-logo" class="product-logo-style"></div>
+
+		<div id="copyright-text" class="copyright-text-style"></div>
+		<div id="version-text" class="version-text-style"></div>
+
+		<div id="course-header" class="course-header-style"><!--S-133: Strongest Link Security Awareness Training--></div>
+		<div id="module-name" class="module-name-style"><!--Introduction--></div>
+		<a href="#" onclick="return false" id="page-combo" class="page-combo-style" style="color:white"><!--The Strongest Link--></a>
+
+		<div id="progress-bar" class="progress-bar-style">
+			<div id="progress-bar-start" class="progress-bar-start-style"></div>
+			<div id="progress-bar-middle" class="progress-bar-middle-style"></div>
+			<div id="progress-bar-middle" class="progress-bar-middle-style"></div>
+			<div id="progress-bar-end" class="progress-bar-end-style"></div>
+			<div id="progress-bar-circle" class="progress-bar-circle-style"></div>
+		</div>
+
+		<div id="tooltip" class="tooltip-style">
+			<div id="tooltip-start" class="tooltip-start-style"></div>
+			<div id="tooltip-middle" class="tooltip-middle-style">
+				<div id="tooltip-text" class="tooltip-text-style"></div>
+			</div>
+			<div id="tooltip-end" class="tooltip-end-style"></div>
+			<div id="tooltip-bubble" class="tooltip-bubble-style"></div>
+		</div>
+
+		<div id="mode-box" class="mode-box-style" style="display:none;">
+			<div style="padding:5px; text-align:center; font-weight:bold" id="mode-box-text"></div>
+		</div>
+
+		<div id="scorm-timer-container" class="scorm-timer-style">
+			<div id="scorm-timer" class="scorm-timer-text-style">Timer: 00:00:00</div>
+		</div>
+
+		<a id="help-button" href="#" class="skin-button help-button-style" onclick="return false"></a>
+		<a id="glossary-button" href="#" class="skin-button glossary-button-style" onclick="return false"></a>
+		<a id="exit-button" href="#" class="skin-button exit-button-style" onclick="return false"></a>
+
+		<a id="volume-button" class="skin-button volume-button-style" href="#" onclick="return false"></a>
+		<div id="volume-box" class="volume-box-style">
+			<div id="volume-slider" class="volume-slider-style">
+				<div id="volume-slider-button" class="volume-slider-button-style"></div>
+			</div>
+			<div id="volume-popup-mute" class="volume-popup-speaker-style"></div>
+		</div>
+
+		<a id="autoforward-button" class="skin-button autoforward-button-style" href="#" onclick="return false"></a>
+		<a id="mode-button" class="skin-button mode-button-style" href="#" onclick="return false"></a>
+		<a id="replay-button" class="skin-button replay-button-style" href="#" onclick="return false"></a>
+
+		<a id="backward-button" href="#" class="skin-button backward-button-style" onclick="return false"></a>
+		<a id="play-button" href="#" class="skin-button play-button-style" onclick="return false"></a>
+		<a id="forward-button" href="#" class="skin-button forward-button-style" onclick="return false"></a>
+
+		<!-- a id="cc-button" href="#" class="skin-cc-button cc-button-style" onclick="return false"></a -->
+
+		<img id="ajax-loading-graph" src="css/images/ajax-loader-ipad.gif"
+		     style="width: 32px; height: 32px; position: absolute; z-index: 1000; left:762px; top:400px; display:none "/>
+		<img id="ajax-poster" src="" style="width: 32px; height: 32px; position: absolute; z-index: 4; left:100px; top:100px; display:none" border="0"/>
+		<div id="jplayer_video" style="position:absolute; z-index:3; display:none" class="jp-jplayer"></div>
+		<div id="video-progress-bar" class="video-progress-bar-style">
+			<div id="video-progress-bar-time-done" style="float:left" class="video-progress-bar-time-done-style"></div>
+			<div id="video-progress-bar-middle" class="video-progress-bar-middle-style"></div>
+			<div id="video-progress-bar-time-left" style="float:right; text-align:right" class="video-progress-bar-time-left-style"></div>
+		</div>
+	</div>
+
+	<div id="glossary-select" class="glossary-select-style" style="display:none">
+		<div id="glossary-select-top" class="glossary-select-top-style"></div>
+		<div id="glossary-select-middle" class="glossary-select-middle-style">
+			<div id="glossary-select-title-text" class="glossary-select-title-text-style"></div>
+			<div id="glossary-select-text" class="glossary-select-text-style"></div>
+			<div id="glossary-description" class="glossary-select-description-style"></div>
+		</div>
+		<div id="glossary-select-bottom" class="glossary-select-bottom-style"></div>
+	</div>
+
+	<div id="help-window" class="help-window-style" style="display:none">
+		<div id="help-window-top" class="help-window-top-style"></div>
+		<div id="help-window-middle" class="help-window-middle-style">
+			<div id="help-window-title-text" class="help-window-title-text-style"></div>
+			<div id="help-window-description" class="help-window-description-style"></div>
+		</div>
+		<div id="help-window-bottom" class="help-window-bottom-style"></div>
+	</div>
+
+	<div id="page-select" class="page-select-style">
+		<div id="page-select-top" class="page-select-top-style"></div>
+		<div id="page-select-middle" class="page-select-middle-style">
+			<div id="page-select-text" class="page-select-text-style">
+			</div>
+		</div>
+		<div id="page-select-bottom" class="page-select-bottom-style"></div>
+	</div>
+</div>
+
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="Background_Audio_Player" class="jp-jplayer"></div>
+<div id="jplayer_effectSound" class="jp-jplayer"></div>
+
+</body>
+
+</html>

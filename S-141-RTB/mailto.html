@@ -1,0 +1,23 @@
+<html>
+<script>
+function checkMailto(hash){
+
+    hash2 = hash.split(':');
+	
+    if(hash2.length > 1){
+        return hash2[2];
+    } else {
+        return false;
+    }
+}
+
+var mailto = checkMailto(location.hash);
+
+if(mailto){
+    location.href = 'mailto:'+mailto;
+    setTimeout(function(){
+      window.close();
+    }, 1000);
+}
+</script>
+</html>
