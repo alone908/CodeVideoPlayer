@@ -11,17 +11,16 @@ $(document).ready(function () {
         $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
     }
 
-    $('#play-button').on('click',function(){
-        playClick();
-    });
+    CodeVideoPlayer.VideoEnded = function(){
+        $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
+    }
 
-    $('#forward-button').on('click',function(){
-        forwardClick();
-    });
-
-    $('#backward-button').on('click',function(){
-        backwardClick();
-    });
+    $('#play-button').bind('click',playClick);
+    $('#forward-button').bind('click',forwardClick);
+    $('#backward-button').bind('click',backwardClick);
+    $('#replay-button').bind('click',replayClick);
+    $("#mode-button").bind('click', toggleModeBox);
+    $('.mode-select').bind('click', modeSelect);
 
 })
 
@@ -47,6 +46,35 @@ function forwardClick(){
 function backwardClick(){
     $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
     CodeVideoPlayer.BackToLastFrame();
+}
+
+function replayClick(){
+    $("#play-button").removeClass("play-button-style").addClass("pause-button-style");
+    CodeVideoPlayer.Replay();
+}
+
+var isModeVisible = false;
+function toggleModeBox() {
+    if ($("#mode-button").hasClass("mode-button-style-offline")) {
+        return false;
+    }
+    if (isModeVisible == false) {
+        isModeVisible = true;
+        $("#mode-box").css('visibility', 'visible').show('slide', {direction: 'down'}, 250);
+        $("#mode-button").addClass("mode-button-style-active");
+    }
+    else {
+        isModeVisible = false;
+        $("#mode-box").hide('slide', {direction: 'down'}, 150);
+        $("#mode-button").removeClass("mode-button-style-active");
+    }
+}
+
+function modeSelect(){
+    $('.mode-select').removeClass('mode-settings-style-active');
+    $(this).addClass('mode-settings-style-active');
+    toggleModeBox();
+    CodeVideoPlayer.ChangeSpeed(Number($(this).text()));
 }
 
 function get_json_list(){

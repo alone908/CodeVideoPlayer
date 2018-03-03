@@ -5,6 +5,7 @@
     <title>CodeVideoPlayer</title>
 
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/CodeVideoPlayer.js"></script>
     <script src="js/index.js"></script>
 
@@ -39,7 +40,13 @@
         <a href="#" onclick="return false" id="page-combo" class="page-combo-style" style="color:white"></a>
 
         <div id="mode-box" class="mode-box-style" style="display:none;">
-            <div style="padding:5px; text-align:center; font-weight:bold" id="mode-box-text"></div>
+            <div style="padding:5px; text-align:center; font-weight:bold" id="mode-box-text">Speed</div>
+            <a style="display:block" class="mode-select mode-settings-style">0.5</a>
+            <a style="display:block" class="mode-select mode-settings-style mode-settings-style-active">1.0</a>
+            <a style="display:block" class="mode-select mode-settings-style">1.5</a>
+            <a style="display:block" class="mode-select mode-settings-style">2.0</a>
+            <a style="display:block" class="mode-select mode-settings-style">3.0</a>
+            <a style="display:block" class="mode-select mode-settings-style">5.0</a>
         </div>
 
         <a id="mode-button" class="skin-button mode-button-style" href="#" onclick="return false"></a>

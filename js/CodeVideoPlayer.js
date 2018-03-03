@@ -9,6 +9,7 @@ function CodeVideoPlayer(){
     this.AutoStart = true;
     this.AutoReplay = false;
     this.VideoTimer = null;
+    this.isPlaying = false;
 
 }
 
@@ -145,25 +146,49 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
 
 CodeVideoPlayer.prototype.Play = function(){
 
+    CodeVideoPlayer.isPlaying = true;
+
     CodeVideoPlayer.VideoTimer = setInterval(function () {
 
         $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
         CodeVideoPlayer.CurrentFrame ++;
 
         if(CodeVideoPlayer.CurrentFrame === CodeVideoPlayer.VideoFrame.length){
-            if(CodeVideoPlayer.AutoReplay){
-                CodeVideoPlayer.CurrentFrame = 0;
-            }else {
+            CodeVideoPlayer.CurrentFrame = 0;
+            if(!CodeVideoPlayer.AutoReplay){
+                CodeVideoPlayer.isPlaying = false;
                 clearInterval(CodeVideoPlayer.VideoTimer);
+                CodeVideoPlayer.VideoEnded();
             }
         }
 
-    },CodeVideoPlayer.Speed*250);
+    },(1/CodeVideoPlayer.Speed)*250);
 
 }
 
-CodeVideoPlayer.prototype.Pause = function(){
+CodeVideoPlayer.prototype.Replay = function(){
     clearInterval(CodeVideoPlayer.VideoTimer);
+    CodeVideoPlayer.CurrentFrame = 0;
+    CodeVideoPlayer.Play();
+}
+
+CodeVideoPlayer.prototype.Pause = function(){
+    CodeVideoPlayer.isPlaying = false;
+    clearInterval(CodeVideoPlayer.VideoTimer);
+}
+
+CodeVideoPlayer.prototype.Stop = function(){
+    CodeVideoPlayer.isPlaying = false;
+    CodeVideoPlayer.CurrentFrame = 0;
+    clearInterval(CodeVideoPlayer.VideoTimer);
+}
+
+CodeVideoPlayer.prototype.ChangeSpeed = function(Speed){
+    CodeVideoPlayer.Speed = Speed;
+    if(CodeVideoPlayer.isPlaying){
+        CodeVideoPlayer.Pause();
+        CodeVideoPlayer.Play();
+    }
 }
 
 CodeVideoPlayer.prototype.GoToNextFrame = function(){
