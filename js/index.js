@@ -21,12 +21,32 @@ $(document).ready(function () {
     $('#replay-button').bind('click',replayClick);
     $("#mode-button").bind('click', toggleModeBox);
     $('.mode-select').bind('click', modeSelect);
+    $('#page-combo').bind('click', togoPageCombo);
 
 })
 
 window.onresize = function(event) {
     resizeControls();
 };
+
+function jsonFileClick(){
+    console.log('here');
+    togoPageCombo();
+    $('#page-combo').html($(this).text());
+    load_json_file($(this).text());
+}
+
+function togoPageCombo(){
+    if($('#page-select').css('height') === '260px'){
+        $('#page-select').animate({
+            height:'0px'
+        },500)
+    }else {
+        $('#page-select').animate({
+            height:'260px'
+        },500)
+    }
+}
 
 function playClick(){
     if($("#play-button").hasClass("play-button-style")){
@@ -86,8 +106,9 @@ function get_json_list(){
             JsonFileList = data.filelist;
             $('#page-combo').html(JsonFileList[0]);
             JsonFileList.forEach(function (file, number) {
-                $("#page-select-text").append('<a href="#" onclick="return false" style="font-size:14px;display:block;" class="page-select-text-line-style">' + file + '</a>');
+                $("#page-select-text").append('<a style="font-size:14px;display:block;" class="jsonFile page-select-text-line-style">' + file + '</a>');
             })
+            $('.jsonFile').bind('click', jsonFileClick);
             load_json_file(JsonFileList[0])
         }
     })

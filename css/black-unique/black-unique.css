@@ -225,13 +225,12 @@ a img {
 }
 
 .page-select-style {
-	display:none;
+	display:inline-block;
 	position:absolute;
-	display: inline-block;
 	z-index:32;
 	left:163px;
 	top:77px;
-	height:260px;
+	height:0px;
 	width:604px;
     background-color: rgba(0,0,0,0.5);
 }

@@ -19,6 +19,12 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         return false;
     }
 
+    //Whene create second video, reset some parameters First.
+    CodeVideoPlayer.TotalFrame = 0;
+    CodeVideoPlayer.CurrentFrame = 0;
+    clearInterval(CodeVideoPlayer.VideoTimer);
+    CodeVideoPlayer.isPlaying = false;
+
     CodeVideoPlayer.PlayerID = PlayerID;
     CodeVideoPlayer.JSONString = JSONString;
     CodeVideoPlayer.JSONObj =  JSON.parse(JSONString);
