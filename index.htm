@@ -6,11 +6,13 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.fileupload.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/CodeVideoPlayer.js"></script>
     <script src="js/index.js"></script>
 
     <link href="css/black-unique/black-unique.css" rel="stylesheet" type="text/css">
     <link href="css/course.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -37,7 +39,10 @@
 
         <div id="course-header" class="course-header-style">Code Video Player</div>
         <div id="module-name" class="module-name-style">Selet JSON File:</div>
-        <a href="#" onclick="return false" id="page-combo" class="page-combo-style" style="color:white"></a>
+        <a id="page-combo" class="page-combo-style" style="color:white"></a>
+        <button id="upload" class="fileinput-button" style="left: 800px;position: absolute;font-size:  16px;top: 52px;font-weight: bold;background:  black;color: white;">Upload
+            <input id='fileupload' type='file' name='files[]' style='height:100%;width:100%; cursor:pointer;'>
+        </button>
 
         <div id="mode-box" class="mode-box-style" style="display:none;">
             <div style="padding:5px; text-align:center; font-weight:bold" id="mode-box-text">Speed</div>
@@ -51,7 +56,6 @@
 
         <a id="mode-button" class="skin-button mode-button-style" href="#" onclick="return false"></a>
         <a id="replay-button" class="skin-button replay-button-style" href="#" onclick="return false"></a>
-
         <a id="backward-button" href="#" class="skin-button backward-button-style" onclick="return false"></a>
         <a id="play-button" href="#" class="skin-button play-button-style"></a>
         <a id="forward-button" href="#" class="skin-button  forward-button-style" onclick="return false"></a>

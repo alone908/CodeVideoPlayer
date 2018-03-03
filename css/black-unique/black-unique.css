@@ -275,6 +275,7 @@ a img {
 	padding-right:12px;
 	max-height:515px;
 	overflow:auto;
+	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
 }

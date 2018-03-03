@@ -3,7 +3,7 @@ var JsonFileList = [];
 $(document).ready(function () {
 
     resizeControls();
-    get_json_list();
+    get_json_list(true);
 
     if(CodeVideoPlayer.AutoStart){
         $("#play-button").removeClass("play-button-style").addClass("pause-button-style");
@@ -23,14 +23,32 @@ $(document).ready(function () {
     $('.mode-select').bind('click', modeSelect);
     $('#page-combo').bind('click', togoPageCombo);
 
-})
+    var url = 'appphp/upload_json.php';
+
+	$('#fileupload').fileupload({
+		url: url,
+		dataType: 'json',
+		autoUpload: true,
+		acceptFileTypes: /(\.|\/)(json)$/i,
+		disableImageResize: false,
+		previewMaxWidth: 100,
+		previewMaxHeight: 100,
+		previewCrop: true
+	}).on('fileuploadadd', function (e, data) {
+
+	}).on('fileuploaddone', function (e, data) {
+        get_json_list(false);
+	})
+
+});
+
+
 
 window.onresize = function(event) {
     resizeControls();
 };
 
 function jsonFileClick(){
-    console.log('here');
     togoPageCombo();
     $('#page-combo').html($(this).text());
     load_json_file($(this).text());
@@ -97,7 +115,8 @@ function modeSelect(){
     CodeVideoPlayer.ChangeSpeed(Number($(this).text()));
 }
 
-function get_json_list(){
+function get_json_list(loadFirstFile){
+    $("#page-select-text").html('');
     $.ajax({
         type: 'POST',
         url: "appphp/get_json_filelist.php",
@@ -109,7 +128,9 @@ function get_json_list(){
                 $("#page-select-text").append('<a style="font-size:14px;display:block;" class="jsonFile page-select-text-line-style">' + file + '</a>');
             })
             $('.jsonFile').bind('click', jsonFileClick);
-            load_json_file(JsonFileList[0])
+            if(loadFirstFile){
+                load_json_file(JsonFileList[0])
+            }
         }
     })
 }
