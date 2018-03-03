@@ -18,6 +18,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
     CodeVideoPlayer.JSONObj =  JSON.parse(JSONString);
     CodeVideoPlayer.ContentMap = ContentMapping();
     CodeVideoPlayer.RealFrame = CreateRealFrame();
+    CodeVideoPlayer.VirtualFrame = CreateVirtualFrame();
 
     function ContentMapping(){
         var ContentMap = [];
@@ -37,7 +38,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         ContentMap.forEach(function (line, lineKey) {
             for(var chrPos=0; chrPos<=line.length-1; chrPos++){
                 if(typeof ContentMap[lineKey][chrPos] === 'undefined'){
-                    ContentMap[lineKey][chrPos] = ' ';
+                    ContentMap[lineKey][chrPos] = CodeVideoPlayer.SpaceGrid;
                 }
             }
         });
@@ -53,10 +54,10 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                 if(typeof RealFrame[0][lineKey] === 'undefined'){
                     RealFrame[0][lineKey] = [];
                 }
-                if(chr !== ' '){
-                    RealFrame[0][lineKey][chrPos] = CodeVideoPlayer.EmptyGrid;
-                }else {
+                if(chr === CodeVideoPlayer.SpaceGrid){
                     RealFrame[0][lineKey][chrPos] = CodeVideoPlayer.SpaceGrid;
+                }else {
+                    RealFrame[0][lineKey][chrPos] = CodeVideoPlayer.EmptyGrid;
                 }
             })
         });
@@ -90,5 +91,30 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         });
 
         return RealFrame;
+    }
+
+    function CreateVirtualFrame(){
+        var VirtualFrame = [];
+        CodeVideoPlayer.RealFrame.forEach(function (Frame, frameKey) {
+            VirtualFrame[frameKey] = [];
+            Frame.forEach(function (line, lineKey) {
+                var isJunkLine = true;
+                VirtualFrame[frameKey].push([]);
+                line.forEach(function (chr, chrPos) {
+                    if(chr !== CodeVideoPlayer.EmptyGrid && chr !== CodeVideoPlayer.SpaceGrid){
+                        isJunkLine = false;
+                        VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(chr);
+                    }
+                    if(chr === CodeVideoPlayer.SpaceGrid){
+                        isJunkLine = false;
+                        VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(' ');
+                    }
+                })
+                if(isJunkLine){
+                    VirtualFrame[frameKey].splice(-1,1)
+                }
+            })
+        })
+        return VirtualFrame;
     }
 }
