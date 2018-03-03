@@ -52,7 +52,7 @@ a img {
 	height:500px;
 	padding:10px;
 	overflow:hidden;
-	background-color: #0e2524;
+	background-color: #282C34;
 }
 
 
@@ -87,7 +87,7 @@ a img {
 	left:12px;
 	height: 61px;
 	width: 150px;
-	
+
 	background-size: 150px 61px;
 }
 
@@ -232,7 +232,7 @@ a img {
 	left:163px;
 	top:77px;
 	height:260px;
-	width:628px;
+	width:604px;
     background-color: rgba(0,0,0,0.5);
 }
 
@@ -249,7 +249,7 @@ a img {
 .page-select-middle-style {
 	/*background: url("skinimages/page-select-bg.png") repeat-y scroll 0 0 transparent;*/
 	z-index:8;
-	width:628px;
+	width:604px;
     height: 100%;
     overflow-y: auto;
 }
@@ -267,7 +267,7 @@ a img {
 
 .page-select-text-style {
 	z-index:8;
-	width:590px;
+	width:560px;
 	position:relative;
 	display:inline-block;
 	min-height:120px;

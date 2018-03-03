@@ -162,6 +162,26 @@ CodeVideoPlayer.prototype.Play = function(){
 
 }
 
+CodeVideoPlayer.prototype.Pause = function(){
+    clearInterval(CodeVideoPlayer.VideoTimer);
+}
+
+CodeVideoPlayer.prototype.GoToNextFrame = function(){
+    clearInterval(CodeVideoPlayer.VideoTimer);
+    if(CodeVideoPlayer.CurrentFrame < CodeVideoPlayer.VideoFrame.length-1){
+        CodeVideoPlayer.CurrentFrame ++ ;
+        $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
+    }
+}
+
+CodeVideoPlayer.prototype.BackToLastFrame = function(){
+    clearInterval(CodeVideoPlayer.VideoTimer);
+    if(CodeVideoPlayer.CurrentFrame > 0){
+        CodeVideoPlayer.CurrentFrame -- ;
+        $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
+    }
+}
+
 CodeVideoPlayer.prototype.htmlEncode = function(str) {
     var buf = [];
 
