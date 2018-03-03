@@ -2,7 +2,7 @@ var CodeVideoPlayer = new CodeVideoPlayer();
 $.ajax({
     type: 'POST',
     url: "appphp/get_json.php",
-    data: {filename:'helloworld'},
+    data: {filename:'span_inline'},
     dataType: 'JSON',
     success: function (data) {
         if(data.result === 'good'){

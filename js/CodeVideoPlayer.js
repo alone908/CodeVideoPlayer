@@ -1,10 +1,14 @@
 function CodeVideoPlayer(){
 
+    this.PlayerID = "";
     this.EmptyGrid = "`";
     this.SpaceGrid = "``";
     this.TotalFrame = 0;
     this.CurrentFrame = 0;
-    this.Speed = 1;
+    this.Speed = 1;  // 1 = 250ms/frame
+    this.AutoStart = true;
+    this.AutoReplay = false;
+    this.VideoTimer = null;
 
 }
 
@@ -14,11 +18,16 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         return false;
     }
 
+    CodeVideoPlayer.PlayerID = PlayerID;
     CodeVideoPlayer.JSONString = JSONString;
     CodeVideoPlayer.JSONObj =  JSON.parse(JSONString);
     CodeVideoPlayer.ContentMap = ContentMapping();
     CodeVideoPlayer.RealFrame = CreateRealFrame();
     CodeVideoPlayer.VirtualFrame = CreateVirtualFrame();
+    CodeVideoPlayer.VideoFrame = CreateVideoFrame();
+    if(CodeVideoPlayer.AutoStart){
+        CodeVideoPlayer.Play();
+    }
 
     function ContentMapping(){
         var ContentMap = [];
@@ -105,7 +114,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                         isJunkLine = false;
                         VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(chr);
                     }
-                    if(chr === CodeVideoPlayer.SpaceGrid){
+                    if(chr === CodeVideoPlayer.SpaceGrid && line[chrPos+1] !== CodeVideoPlayer.EmptyGrid){
                         isJunkLine = false;
                         VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(' ');
                     }
@@ -117,4 +126,54 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         })
         return VirtualFrame;
     }
+
+    function CreateVideoFrame(){
+        var VideoFrame = [];
+        CodeVideoPlayer.VirtualFrame.forEach(function (Frame, frameKey) {
+            VideoFrame[frameKey] = [];
+            var frameContent = '';
+
+            Frame.forEach(function (line, lineKey) {
+                frameContent += '<span id="line-'+lineKey+'" style="display:block; font-size: 16px; vertical-align: text-top;">'+CodeVideoPlayer.htmlEncode(line.join(''))+'</span>';
+            })
+            VideoFrame[frameKey] = frameContent;
+        })
+
+        return VideoFrame;
+    }
+}
+
+CodeVideoPlayer.prototype.Play = function(){
+
+    CodeVideoPlayer.VideoTimer = setInterval(function () {
+
+        $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
+        CodeVideoPlayer.CurrentFrame ++;
+
+        if(CodeVideoPlayer.CurrentFrame === CodeVideoPlayer.VideoFrame.length){
+            if(CodeVideoPlayer.AutoReplay){
+                CodeVideoPlayer.CurrentFrame = 0;
+            }else {
+                clearInterval(CodeVideoPlayer.VideoTimer);
+            }
+        }
+
+    },CodeVideoPlayer.Speed*250);
+
+}
+
+CodeVideoPlayer.prototype.htmlEncode = function(str) {
+    var buf = [];
+
+    for (var i=str.length-1;i>=0;i--) {
+        buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+    }
+
+    return buf.join('');
+}
+
+CodeVideoPlayer.prototype.htmlDecode = function(str) {
+    return str.replace(/&#(\d+);/g, function(match, dec) {
+        return String.fromCharCode(dec);
+    });
 }
