@@ -239,7 +239,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                 }
 
                     break;
-            }            
+            }
         }
 
         return VirtualFrame;
@@ -311,16 +311,22 @@ CodeVideoPlayer.prototype.GoToNextFrame = function(){
     clearInterval(CodeVideoPlayer.VideoTimer);
     if(CodeVideoPlayer.CurrentFrame < CodeVideoPlayer.VideoFrame.length-1){
         CodeVideoPlayer.CurrentFrame ++ ;
-        $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
     }
+    if(CodeVideoPlayer.CurrentFrame === CodeVideoPlayer.VideoFrame.length-1){
+        CodeVideoPlayer.CurrentFrame = 0 ;
+    }
+    $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
 }
 
 CodeVideoPlayer.prototype.BackToLastFrame = function(){
     clearInterval(CodeVideoPlayer.VideoTimer);
     if(CodeVideoPlayer.CurrentFrame > 0){
         CodeVideoPlayer.CurrentFrame -- ;
-        $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
     }
+    if(CodeVideoPlayer.CurrentFrame === 0){
+        CodeVideoPlayer.CurrentFrame = CodeVideoPlayer.VideoFrame.length-1 ;
+    }
+    $('#'+CodeVideoPlayer.PlayerID).html(CodeVideoPlayer.VideoFrame[CodeVideoPlayer.CurrentFrame]);
 }
 
 CodeVideoPlayer.prototype.htmlEncode = function(str) {
