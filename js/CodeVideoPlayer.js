@@ -53,8 +53,14 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
             })
         });
 
-        ContentMap.forEach(function (line, lineKey) {
+        for(var lineKey=0; lineKey<=ContentMap.length-1; lineKey++){
             var firstChrHappened = false;
+            if(typeof ContentMap[lineKey] === 'undefined'){
+                ContentMap[lineKey] = [];
+                ContentMap[lineKey].push(CodeVideoPlayer.EmptyGrid);
+                SpaceMap[lineKey + '-0'] = {type: 'emptyline', happenedframe: 0};
+            }
+            var line = ContentMap[lineKey];
             for(var chrPos=0; chrPos<=line.length-1; chrPos++){
                 if(typeof ContentMap[lineKey][chrPos] !== 'undefined' && !firstChrHappened){
                     firstChrHappened = true;
@@ -71,7 +77,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     }
                 }
             }
-        });
+        };
 
         var frameCount = 0;
         CodeVideoPlayer.JSONObj.forEach(function (items, key) {
@@ -196,6 +202,23 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                 var arrayTail = VirtualFrame.slice(frameKey);
                 VirtualFrame = arrayHead.concat([newFrame],arrayTail);
                 CodeVideoPlayer.TotalFrame ++;
+            }
+
+            if(CodeVideoPlayer.SpaceMap[index]['type'] === 'indent'){
+
+            }
+
+            if(CodeVideoPlayer.SpaceMap[index]['type'] === 'emptyline'){
+                var insertEmptyLineOneFrameAhead = false;
+                VirtualFrame.forEach(function (frame, frameKey) {
+                    if(VirtualFrame[frameKey].length-1 > spaceLineKey){
+                        if(!insertEmptyLineOneFrameAhead){
+                            VirtualFrame[frameKey-1].splice(spaceLineKey,0,[" "]);
+                            insertEmptyLineOneFrameAhead = true;
+                        }
+                        VirtualFrame[frameKey].splice(spaceLineKey,0,[" "]);
+                    }
+                })
             }
 
         }
