@@ -28,7 +28,9 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
     CodeVideoPlayer.PlayerID = PlayerID;
     CodeVideoPlayer.JSONString = JSONString;
     CodeVideoPlayer.JSONObj =  JSON.parse(JSONString);
-    CodeVideoPlayer.ContentMap = ContentMapping();
+    var MappingResult = ContentMapping();
+    CodeVideoPlayer.ContentMap = MappingResult.ContentMap;
+    CodeVideoPlayer.SpaceMap = MappingResult.SpaceMap;
     CodeVideoPlayer.RealFrame = CreateRealFrame();
     CodeVideoPlayer.VirtualFrame = CreateVirtualFrame();
     CodeVideoPlayer.VideoFrame = CreateVideoFrame();
@@ -38,7 +40,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
 
     function ContentMapping(){
         var ContentMap = [];
-
+        var SpaceMap = {};
         CodeVideoPlayer.JSONObj.forEach(function (items, key) {
             items.highlights.forEach(function (info, index) {
                 var textArray = info.selection.split("");
@@ -52,14 +54,50 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         });
 
         ContentMap.forEach(function (line, lineKey) {
+            var firstChrHappened = false;
             for(var chrPos=0; chrPos<=line.length-1; chrPos++){
+                if(typeof ContentMap[lineKey][chrPos] !== 'undefined' && !firstChrHappened){
+                    firstChrHappened = true;
+                    for (var i = 0; i < chrPos; i++){
+                        SpaceMap[lineKey+'-'+i]['beforeChr'] = chrPos;
+                    }
+                }
                 if(typeof ContentMap[lineKey][chrPos] === 'undefined'){
                     ContentMap[lineKey][chrPos] = CodeVideoPlayer.SpaceGrid;
+                    if(firstChrHappened){
+                        SpaceMap[lineKey+'-'+chrPos] = 'reserved';
+                    }else {
+                        SpaceMap[lineKey + '-' + chrPos] = {type: 'indent', beforeChr: 0, happenedframe: 0};
+                    }
                 }
             }
         });
 
-        return ContentMap;
+        var frameCount = 0;
+        CodeVideoPlayer.JSONObj.forEach(function (items, key) {
+            items.highlights.forEach(function (info, index) {
+
+                var textArray = info.selection.split("");
+                var chrPos = parseInt(info.begin_ch);
+                var linePos = parseInt(info.begin_line);
+                var indentBeforeChr = (typeof SpaceMap[linePos + '-0'] !== 'undefined') ? SpaceMap[linePos + '-0']['beforeChr'] : -1 ;
+
+                textArray.forEach(function (chr, n) {
+                    frameCount ++;
+                    if (SpaceMap[linePos + '-' + (chrPos - 1)] === 'reserved') {
+                        SpaceMap[linePos + '-' + (chrPos - 1)] = {type: 'reserved', happenedframe: frameCount};
+                    }
+                    if (chrPos === indentBeforeChr){
+                        for(var i=0; i<indentBeforeChr; i++){
+                            SpaceMap[linePos + '-' + i]['happenedframe'] = frameCount;
+                        }
+                    }
+                    chrPos ++;
+                })
+            })
+        });
+
+        return {ContentMap: ContentMap, SpaceMap: SpaceMap}
     }
 
     function CreateRealFrame(){
@@ -121,9 +159,16 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                         isJunkLine = false;
                         VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(chr);
                     }
-                    if(chr === CodeVideoPlayer.SpaceGrid && line[chrPos+1] !== CodeVideoPlayer.EmptyGrid){
-                        isJunkLine = false;
-                        VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(' ');
+                    if(chr === CodeVideoPlayer.SpaceGrid){
+                        if(CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].type === 'reserved' && frameKey >= CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].happenedframe){
+                            isJunkLine = false;
+                            VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(' ');
+                        }
+                        if(CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].type === 'indent' && frameKey >= CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].happenedframe){
+                            isJunkLine = false;
+                            VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push("&nbsp;");
+
+                        }
                     }
                 })
                 if(isJunkLine){
