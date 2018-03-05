@@ -293,27 +293,27 @@
       {
         "select_type": "html",
         "begin_line": "7",
-        "begin_ch": "66",
+        "begin_ch": "67",
         "end_line": "7",
-        "end_ch": "67",
+        "end_ch": "68",
         "selection": "<",
         "hid": 5
       },
       {
         "select_type": "html",
         "begin_line": "7",
-        "begin_ch": "70",
+        "begin_ch": "71",
         "end_line": "7",
-        "end_ch": "71",
+        "end_ch": "72",
         "selection": ">",
         "hid": 6
       },
       {
         "select_type": "html",
         "begin_line": "7",
-        "begin_ch": "67",
+        "begin_ch": "68",
         "end_line": "7",
-        "end_ch": "70",
+        "end_ch": "71",
         "selection": "/h1",
         "hid": 7
       }
@@ -330,7 +330,7 @@
         "begin_ch": "38",
         "end_line": "7",
         "end_ch": "66",
-        "selection": "My first hello word program.",
+        "selection": "My first hello world program.",
         "hid": 2
       }
     ],

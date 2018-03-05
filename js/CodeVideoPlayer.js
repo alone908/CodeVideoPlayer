@@ -187,7 +187,9 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
             var spaceLineKey = parseInt(index.split('-')[0]);
             var spaceChrPos = parseInt(index.split('-')[1]);
 
-            if(CodeVideoPlayer.SpaceMap[index]['type'] === 'reserved'){
+            switch (CodeVideoPlayer.SpaceMap[index]['type']) {
+                case 'reserved':
+
                 var frameKey = CodeVideoPlayer.SpaceMap[index]['happenedframe'];
                 var newFrame = [];
                 VirtualFrame[frameKey+reservedSpaceFrameCount-1].forEach(function (line, lineKey) {
@@ -204,13 +206,15 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                 VirtualFrame = arrayHead.concat([newFrame],arrayTail);
                 reservedSpaceFrameCount ++;
                 CodeVideoPlayer.TotalFrame ++;
-            }
 
-            if(CodeVideoPlayer.SpaceMap[index]['type'] === 'indent'){
+                    break;
 
-            }
+                case 'indent':
 
-            if(CodeVideoPlayer.SpaceMap[index]['type'] === 'emptyline'){
+                    break;
+
+                case 'emptyline':
+
                 var insertEmptyLineOneFrameAhead = false;
                 VirtualFrame.forEach(function (frame, frameKey) {
                     if(VirtualFrame[frameKey].length-1 > spaceLineKey){
@@ -233,7 +237,9 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     VirtualFrame.push(newFrame);
                     CodeVideoPlayer.TotalFrame ++ ;
                 }
-            }
+
+                    break;
+            }            
         }
 
         return VirtualFrame;
