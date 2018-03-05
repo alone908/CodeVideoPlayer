@@ -162,11 +162,11 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     if(chr === CodeVideoPlayer.SpaceGrid){
                         if(CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].type === 'reserved' && frameKey >= CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].happenedframe){
                             isJunkLine = false;
-                            VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(' ');
+                            VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(" ");
                         }
                         if(CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].type === 'indent' && frameKey >= CodeVideoPlayer.SpaceMap[lineKey+'-'+chrPos].happenedframe){
                             isJunkLine = false;
-                            VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push("&nbsp;");
+                            VirtualFrame[frameKey][VirtualFrame[frameKey].length-1].push(" ");
 
                         }
                     }
@@ -184,9 +184,8 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         CodeVideoPlayer.VirtualFrame.forEach(function (Frame, frameKey) {
             VideoFrame[frameKey] = [];
             var frameContent = '';
-
             Frame.forEach(function (line, lineKey) {
-                frameContent += '<span id="line-'+lineKey+'" style="display:block;color: white; font-size: 16px; vertical-align: text-top;">'+CodeVideoPlayer.htmlEncode(line.join(''))+'</span>';
+                frameContent += "<span id=\"line-"+lineKey+"\" style=\"display:block;color: white; font-size: 16px; vertical-align: text-top;\">"+CodeVideoPlayer.htmlEncode(line.join(''))+"</span>";
             })
             VideoFrame[frameKey] = frameContent;
         })
@@ -259,17 +258,9 @@ CodeVideoPlayer.prototype.BackToLastFrame = function(){
 }
 
 CodeVideoPlayer.prototype.htmlEncode = function(str) {
-    var buf = [];
-
-    for (var i=str.length-1;i>=0;i--) {
-        buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
-    }
-
-    return buf.join('');
+    return String(str).replace(/ /g, '&nbsp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 }
 
 CodeVideoPlayer.prototype.htmlDecode = function(str) {
-    return str.replace(/&#(\d+);/g, function(match, dec) {
-        return String.fromCharCode(dec);
-    });
+    return String(str).replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, '\'');
 }
