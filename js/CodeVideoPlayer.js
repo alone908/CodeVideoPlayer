@@ -255,6 +255,8 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     var arrayTail = VirtualFrame.slice(happenedframe+reservedSpaceFrameCount+1);
                     VirtualFrame = arrayHead.concat([newFrame2],arrayTail);
 
+                    CodeVideoPlayer.SpaceMap[index]['happenedframe1'] = happenedframe+reservedSpaceFrameCount;
+                    CodeVideoPlayer.SpaceMap[index]['happenedframe2'] = happenedframe+reservedSpaceFrameCount+1;
                     emptyLineFrameCount += 2 ;
 
                 } else {
