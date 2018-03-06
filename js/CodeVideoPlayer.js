@@ -36,6 +36,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
     CodeVideoPlayer.RealFrame = CreateRealFrame();
     CodeVideoPlayer.VirtualFrame = CreateVirtualFrame();
     CodeVideoPlayer.VideoFrame = CreateVideoFrame();
+    CodeVideoPlayer.TotalFrame = CodeVideoPlayer.VideoFrame.length;
     if(CodeVideoPlayer.AutoStart){
         CodeVideoPlayer.Play();
     }
@@ -157,7 +158,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         var VirtualFrame = [];
         CodeVideoPlayer.RealFrame.forEach(function (Frame, frameKey) {
             VirtualFrame[frameKey] = [];
-            CodeVideoPlayer.TotalFrame ++ ;
+
             Frame.forEach(function (line, lineKey) {
                 var isJunkLine = true;
                 VirtualFrame[frameKey].push([]);
@@ -208,7 +209,6 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                 var arrayTail = VirtualFrame.slice(frameKey+reservedSpaceFrameCount+emptyLineFrameCount);
                 VirtualFrame = arrayHead.concat([newFrame],arrayTail);
                 reservedSpaceFrameCount ++;
-                CodeVideoPlayer.TotalFrame ++;
 
                     break;
 
@@ -256,7 +256,6 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     VirtualFrame = arrayHead.concat([newFrame2],arrayTail);
 
                     emptyLineFrameCount += 2 ;
-                    CodeVideoPlayer.TotalFrame += 2 ;
 
                 } else {
 
@@ -270,7 +269,6 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     newFrame.splice(spaceLineKey, 0, [" "]);
                     VirtualFrame.push(newFrame);
                     emptyLineFrameCount++;
-                    CodeVideoPlayer.TotalFrame ++ ;
 
                 }
 
