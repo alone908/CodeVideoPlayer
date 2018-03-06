@@ -60,7 +60,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
             if(typeof ContentMap[lineKey] === 'undefined'){
                 ContentMap[lineKey] = [];
                 ContentMap[lineKey].push(CodeVideoPlayer.EmptyGrid);
-                SpaceMap[lineKey + '-0'] = {type: 'emptyline', happenedframe: 0};
+                SpaceMap[lineKey + '-0'] = {type: 'emptyline'};
             }
             var line = ContentMap[lineKey];
             for(var chrPos=0; chrPos<=line.length-1; chrPos++){
@@ -185,6 +185,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         })
 
         var reservedSpaceFrameCount = 0;
+        var emptyLineFrameCount = 0
         for(var index in CodeVideoPlayer.SpaceMap){
             var spaceLineKey = parseInt(index.split('-')[0]);
             var spaceChrPos = parseInt(index.split('-')[1]);
@@ -194,7 +195,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
 
                 var frameKey = CodeVideoPlayer.SpaceMap[index]['happenedframe'];
                 var newFrame = [];
-                VirtualFrame[frameKey+reservedSpaceFrameCount-1].forEach(function (line, lineKey) {
+                VirtualFrame[frameKey+reservedSpaceFrameCount+emptyLineFrameCount-1].forEach(function (line, lineKey) {
                     newFrame.push([]);
                     line.forEach(function (chr, chrPos) {
                         if(lineKey === spaceLineKey && chrPos === spaceChrPos){
@@ -203,8 +204,8 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                         newFrame[newFrame.length-1].push(chr);
                     })
                 })
-                var arrayHead = VirtualFrame.slice(0,frameKey+reservedSpaceFrameCount);
-                var arrayTail = VirtualFrame.slice(frameKey+reservedSpaceFrameCount);
+                var arrayHead = VirtualFrame.slice(0,frameKey+reservedSpaceFrameCount+emptyLineFrameCount);
+                var arrayTail = VirtualFrame.slice(frameKey+reservedSpaceFrameCount+emptyLineFrameCount);
                 VirtualFrame = arrayHead.concat([newFrame],arrayTail);
                 reservedSpaceFrameCount ++;
                 CodeVideoPlayer.TotalFrame ++;
@@ -217,30 +218,64 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
 
                 case 'emptyline':
 
-                var insertEmptyLineOneFrameAhead = false;
-                VirtualFrame.forEach(function (frame, frameKey) {
+                var happenedframe = -1;
+                var newFrame1 = [];
+                var newFrame2 = [];
+
+                for(var frameKey = 0; frameKey < VirtualFrame.length; frameKey ++){
+
                     if(VirtualFrame[frameKey].length-1 > spaceLineKey){
-                        if(!insertEmptyLineOneFrameAhead){
-                            VirtualFrame[frameKey-1].splice(spaceLineKey,0,[" "]);
-                            insertEmptyLineOneFrameAhead = true;
+                        if(happenedframe === -1){
+                            happenedframe = frameKey;
                         }
                         VirtualFrame[frameKey].splice(spaceLineKey,0,[" "]);
                     }
-                })
-                if(!insertEmptyLineOneFrameAhead){
-                    var newFrame = [];
-                    VirtualFrame[VirtualFrame.length-1].forEach(function (line, lineKey) {
-                        newFrame.push([]);
+                };
+
+                if(happenedframe !== -1){
+                    VirtualFrame[happenedframe - 1].forEach(function (line, lineKey) {
+                        if (lineKey === spaceLineKey) {
+                            newFrame1.push([" "]);
+                            newFrame2.push([" "]);
+                            newFrame2.push([" "]);
+                        }
+                        newFrame1.push([]);
+                        newFrame2.push([]);
                         line.forEach(function (chr, chrPos) {
-                            newFrame[newFrame.length-1].push(chr);
+                            newFrame1[newFrame1.length - 1].push(chr);
+                            newFrame2[newFrame2.length - 1].push(chr);
                         })
                     })
-                    newFrame.splice(spaceLineKey,0,[" "]);
+
+                    var arrayHead = VirtualFrame.slice(0,happenedframe+reservedSpaceFrameCount);
+                    var arrayTail = VirtualFrame.slice(happenedframe+reservedSpaceFrameCount);
+                    VirtualFrame = arrayHead.concat([newFrame1],arrayTail);
+
+                    var arrayHead = VirtualFrame.slice(0,happenedframe+reservedSpaceFrameCount+1);
+                    var arrayTail = VirtualFrame.slice(happenedframe+reservedSpaceFrameCount+1);
+                    VirtualFrame = arrayHead.concat([newFrame2],arrayTail);
+
+                    emptyLineFrameCount += 2 ;
+                    CodeVideoPlayer.TotalFrame += 2 ;
+
+                } else {
+
+                    var newFrame = [];
+                    VirtualFrame[VirtualFrame.length - 1].forEach(function (line, lineKey) {
+                        newFrame.push([]);
+                        line.forEach(function (chr, chrPos) {
+                            newFrame[newFrame.length - 1].push(chr);
+                        })
+                    })
+                    newFrame.splice(spaceLineKey, 0, [" "]);
                     VirtualFrame.push(newFrame);
+                    emptyLineFrameCount++;
                     CodeVideoPlayer.TotalFrame ++ ;
+
                 }
 
                     break;
+
             }
         }
 
