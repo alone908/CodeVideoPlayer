@@ -255,7 +255,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     var arrayTail = VirtualFrame.slice(happenedframe+reservedSpaceFrameCount+1);
                     VirtualFrame = arrayHead.concat([newFrame2],arrayTail);
 
-                    CodeVideoPlayer.SpaceMap[index]['happenedframe1'] = happenedframe+reservedSpaceFrameCount;
+                    CodeVideoPlayer.SpaceMap[index]['happenedframe'] = happenedframe+reservedSpaceFrameCount;
                     CodeVideoPlayer.SpaceMap[index]['happenedframe2'] = happenedframe+reservedSpaceFrameCount+1;
                     emptyLineFrameCount += 2 ;
 
@@ -270,6 +270,8 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                     })
                     newFrame.splice(spaceLineKey, 0, [" "]);
                     VirtualFrame.push(newFrame);
+
+                    CodeVideoPlayer.SpaceMap[index]['happenedframe'] = VirtualFrame.length;
                     emptyLineFrameCount++;
 
                 }
