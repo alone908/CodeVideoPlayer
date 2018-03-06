@@ -44,6 +44,13 @@
             <input id='fileupload' type='file' name='files[]' style='height:100%;width:100%; cursor:pointer;'>
         </button>
 
+        <div id="progress-bar" class="progress-bar-style">
+            <div id="progress-bar-start" class="progress-bar-start-style"></div>
+            <div id="progress-bar-middle" class="progress-bar-middle-style"></div>
+            <div id="progress-bar-end" class="progress-bar-end-style"></div>
+            <div id="progress-bar-circle" class="progress-bar-circle-style"></div>
+        </div>
+
         <div id="mode-box" class="mode-box-style" style="display:none;">
             <div style="padding:5px; text-align:center; font-weight:bold" id="mode-box-text">Speed</div>
             <a style="display:block" class="mode-select mode-settings-style">0.5</a>
@@ -59,6 +66,15 @@
         <a id="backward-button" href="#" class="skin-button backward-button-style" onclick="return false"></a>
         <a id="play-button" href="#" class="skin-button play-button-style"></a>
         <a id="forward-button" href="#" class="skin-button  forward-button-style" onclick="return false"></a>
+
+        <div id="tooltip" class="tooltip-style" style="display: none;">
+            <div id="tooltip-start" class="tooltip-start-style"></div>
+            <div id="tooltip-middle" class="tooltip-middle-style">
+                <div id="tooltip-text" class="tooltip-text-style"></div>
+            </div>
+            <div id="tooltip-end" class="tooltip-end-style"></div>
+            <div id="tooltip-bubble" class="tooltip-bubble-style"></div>
+        </div>
 
     </div>
 

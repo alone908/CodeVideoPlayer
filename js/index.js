@@ -1,5 +1,12 @@
 var CodeVideoPlayer = new CodeVideoPlayer();
 var JsonFileList = [];
+var ProgressShowTimer = null;
+var ProgressTimer = null;
+var isProgressVisisble = false;
+var PageToolTip = '';
+var admin_ProgressWidth = 926;
+var isModeVisible = false;
+
 $(document).ready(function () {
 
     resizeControls();
@@ -15,6 +22,10 @@ $(document).ready(function () {
         $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
     }
 
+    CodeVideoPlayer.FrameChanged = function () {
+        updateProgressBar();
+    }
+
     $('#play-button').bind('click',playClick);
     $('#forward-button').bind('click',forwardClick);
     $('#backward-button').bind('click',backwardClick);
@@ -22,6 +33,14 @@ $(document).ready(function () {
     $("#mode-button").bind('click', toggleModeBox);
     $('.mode-select').bind('click', modeSelect);
     $('#page-combo').bind('click', togoPageCombo);
+    $("#progress-bar").bind('mouseover', function () {
+        clearTimeout(ProgressTimer);
+        ProgressShowTimer = setTimeout('ShowProgress()', 200);
+    });
+    $("#progress-bar").bind('mouseout', function () {
+        clearTimeout(ProgressShowTimer);
+        ProgressTimer = setTimeout('HideProgress()', 800);
+    });
 
     var url = 'appphp/upload_json.php';
 
@@ -42,11 +61,75 @@ $(document).ready(function () {
 
 });
 
-
-
 window.onresize = function(event) {
     resizeControls();
 };
+
+function updateProgressBar() {
+    ProgressPrecentage = Math.round(((CodeVideoPlayer.CurrentFrame) / (CodeVideoPlayer.TotalFrame)) * 100);
+    $("#progress-bar-circle").css({"left": Math.round((admin_ProgressWidth * ProgressPrecentage / 100) - 9) + "px"});
+    $("#progress-bar-middle").width(Math.round(admin_ProgressWidth * ProgressPrecentage / 100) + "px");
+
+    PageToolTip = 'Page '+CodeVideoPlayer.CurrentFrame+' out of '+CodeVideoPlayer.TotalFrame;
+    $("#tooltip-text").html("<nobr>" + PageToolTip + "</nobr>");
+
+
+    var tooltip_left = $("#progress-bar").position().left + Math.round((admin_ProgressWidth * ProgressPrecentage / 100) - 5);
+    var tooltip_width = $("#tooltip").width();
+    var tooltip_half_width = Math.round($("#tooltip").width() / 2);
+    var bubble_width = Math.round($("#tooltip-bubble").width() / 2);
+
+    var bubble_position = tooltip_half_width - bubble_width;
+
+    var tooltip_left_pos = tooltip_left - tooltip_half_width + bubble_width - 4;
+
+    if (tooltip_left_pos < 10) {
+        $("#tooltip-bubble").show();
+        bubble_position = bubble_position + tooltip_left_pos - 10;
+        if (ProgressPrecentage < 4) {
+            $("#tooltip-bubble").hide();
+        }
+        else {
+            $("#tooltip-bubble").show();
+        }
+        tooltip_left_pos = 10;
+    }
+    else if ((tooltip_left_pos + tooltip_width) > (admin_ProgressWidth)) {
+        bubble_position = bubble_position + (tooltip_left_pos + tooltip_width - (admin_ProgressWidth + 17));
+
+        tooltip_left_pos = (admin_ProgressWidth + 17) - tooltip_width;
+
+        if (ProgressPrecentage > 90) {
+            $("#tooltip-bubble").hide();
+        }
+        else {
+            $("#tooltip-bubble").show();
+        }
+    }
+    else {
+        $("#tooltip-bubble").show();
+    }
+
+
+    $("#tooltip").css({"left": (tooltip_left_pos) + "px"});
+    $("#tooltip-bubble").css({"left": bubble_position + "px"});
+    $("#tooltip").css({"top": ($("#progress-bar").position().top - 60) + "px"});
+}
+
+function ShowProgress() {
+    if (isProgressVisisble == false) {
+        isProgressVisisble = true;
+        $("#progress-bar-circle").css('visibility', 'visible').fadeIn('fast');
+        $("#tooltip").css('visibility', 'visible').fadeIn('fast');
+    }
+    clearTimeout(ProgressTimer);
+}
+
+function HideProgress() {
+    isProgressVisisble = false;
+    $("#tooltip").fadeOut('slow');
+    $("#progress-bar-circle").fadeOut('slow');
+}
 
 function jsonFileClick(){
     togoPageCombo();
@@ -91,7 +174,6 @@ function replayClick(){
     CodeVideoPlayer.Replay();
 }
 
-var isModeVisible = false;
 function toggleModeBox() {
     if ($("#mode-button").hasClass("mode-button-style-offline")) {
         return false;
