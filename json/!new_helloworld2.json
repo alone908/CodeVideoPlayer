@@ -1,0 +1,421 @@
+[
+  {
+    "name": "open and close html tags",
+    "id": 16,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "0",
+        "begin_ch": "0",
+        "end_line": "0",
+        "end_ch": "1",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "0",
+        "begin_ch": "5",
+        "end_line": "0",
+        "end_ch": "6",
+        "selection": ">",
+        "hid": 3
+      },
+      {
+        "select_type": "html",
+        "begin_line": "0",
+        "begin_ch": "1",
+        "end_line": "0",
+        "end_ch": "5",
+        "selection": "html",
+        "hid": 4
+      },
+      {
+        "select_type": "html",
+        "begin_line": "13",
+        "begin_ch": "0",
+        "end_line": "13",
+        "end_ch": "1",
+        "selection": "<",
+        "hid": 5
+      },
+      {
+        "select_type": "html",
+        "begin_line": "13",
+        "begin_ch": "6",
+        "end_line": "13",
+        "end_ch": "7",
+        "selection": ">",
+        "hid": 6
+      },
+      {
+        "select_type": "html",
+        "begin_line": "13",
+        "begin_ch": "1",
+        "end_line": "13",
+        "end_ch": "6",
+        "selection": "/html",
+        "hid": 7
+      }
+    ],
+    "highlightID": 7
+  },
+  {
+    "name": "open and close of head",
+    "id": 17,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "2",
+        "begin_ch": "4",
+        "end_line": "2",
+        "end_ch": "5",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "2",
+        "begin_ch": "9",
+        "end_line": "2",
+        "end_ch": "10",
+        "selection": ">",
+        "hid": 3
+      },
+      {
+        "select_type": "html",
+        "begin_line": "2",
+        "begin_ch": "5",
+        "end_line": "2",
+        "end_ch": "9",
+        "selection": "head",
+        "hid": 4
+      },
+      {
+        "select_type": "html",
+        "begin_line": "4",
+        "begin_ch": "4",
+        "end_line": "4",
+        "end_ch": "5",
+        "selection": "<",
+        "hid": 5
+      },
+      {
+        "select_type": "html",
+        "begin_line": "4",
+        "begin_ch": "10",
+        "end_line": "4",
+        "end_ch": "11",
+        "selection": ">",
+        "hid": 6
+      },
+      {
+        "select_type": "html",
+        "begin_line": "4",
+        "begin_ch": "5",
+        "end_line": "4",
+        "end_ch": "10",
+        "selection": "/head",
+        "hid": 7
+      }
+    ],
+    "highlightID": 7
+  },
+  {
+    "name": "open and close title",
+    "id": 18,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "8",
+        "end_line": "3",
+        "end_ch": "9",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "14",
+        "end_line": "3",
+        "end_ch": "15",
+        "selection": ">",
+        "hid": 3
+      },
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "9",
+        "end_line": "3",
+        "end_ch": "14",
+        "selection": "title",
+        "hid": 4
+      },
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "26",
+        "end_line": "3",
+        "end_ch": "27",
+        "selection": "<",
+        "hid": 5
+      },
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "33",
+        "end_line": "3",
+        "end_ch": "34",
+        "selection": ">",
+        "hid": 6
+      },
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "27",
+        "end_line": "3",
+        "end_ch": "33",
+        "selection": "/title",
+        "hid": 7
+      }
+    ],
+    "highlightID": 7
+  },
+  {
+    "name": "add title text",
+    "id": 19,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "3",
+        "begin_ch": "15",
+        "end_line": "3",
+        "end_ch": "26",
+        "selection": "Hello World",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  },
+  {
+    "name": "open and close of body",
+    "id": 20,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "6",
+        "begin_ch": "4",
+        "end_line": "6",
+        "end_ch": "5",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "6",
+        "begin_ch": "9",
+        "end_line": "6",
+        "end_ch": "10",
+        "selection": ">",
+        "hid": 3
+      },
+      {
+        "select_type": "html",
+        "begin_line": "6",
+        "begin_ch": "5",
+        "end_line": "6",
+        "end_ch": "9",
+        "selection": "body",
+        "hid": 4
+      },
+      {
+        "select_type": "html",
+        "begin_line": "11",
+        "begin_ch": "4",
+        "end_line": "11",
+        "end_ch": "5",
+        "selection": "<",
+        "hid": 5
+      },
+      {
+        "select_type": "html",
+        "begin_line": "11",
+        "begin_ch": "10",
+        "end_line": "11",
+        "end_ch": "11",
+        "selection": ">",
+        "hid": 6
+      },
+      {
+        "select_type": "html",
+        "begin_line": "11",
+        "begin_ch": "5",
+        "end_line": "11",
+        "end_ch": "10",
+        "selection": "/body",
+        "hid": 7
+      }
+    ],
+    "highlightID": 7
+  },
+  {
+    "name": "open and close h1",
+    "id": 21,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "8",
+        "end_line": "8",
+        "end_ch": "9",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "37",
+        "end_line": "8",
+        "end_ch": "38",
+        "selection": ">",
+        "hid": 3
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "9",
+        "end_line": "8",
+        "end_ch": "11",
+        "selection": "h1",
+        "hid": 4
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "67",
+        "end_line": "8",
+        "end_ch": "68",
+        "selection": "<",
+        "hid": 5
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "71",
+        "end_line": "8",
+        "end_ch": "72",
+        "selection": ">",
+        "hid": 6
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "68",
+        "end_line": "8",
+        "end_ch": "71",
+        "selection": "/h1",
+        "hid": 7
+      }
+    ],
+    "highlightID": 7
+  },
+  {
+    "name": "add h1 text",
+    "id": 19,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "38",
+        "end_line": "8",
+        "end_ch": "66",
+        "selection": "My first hello world program.",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  },
+  {
+    "name": "add empty h1 id",
+    "id": 21,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "12",
+        "end_line": "8",
+        "end_ch": "16",
+        "selection": "id=\"",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "20",
+        "end_line": "8",
+        "end_ch": "21",
+        "selection": "\"",
+        "hid": 3
+      }
+    ],
+    "highlightID": 3
+  },
+  {
+    "name": "add id name",
+    "id": 22,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "16",
+        "end_line": "8",
+        "end_ch": "20",
+        "selection": "myID",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  },
+  {
+    "name": "add empty h1 class",
+    "id": 21,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "22",
+        "end_line": "8",
+        "end_ch": "29",
+        "selection": "class=\"",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "36",
+        "end_line": "8",
+        "end_ch": "37",
+        "selection": "\"",
+        "hid": 3
+      }
+    ],
+    "highlightID": 3
+  },
+  {
+    "name": "add class name",
+    "id": 22,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "8",
+        "begin_ch": "29",
+        "end_line": "8",
+        "end_ch": "36",
+        "selection": "myClass",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  }
+]
