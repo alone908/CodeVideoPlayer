@@ -147,6 +147,9 @@ function togoPageCombo(){
             height:'260px'
         },500)
     }
+    if(isModeVisible){
+        toggleModeBox()
+    }
 }
 
 function playClick(){
@@ -157,21 +160,33 @@ function playClick(){
         $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
         CodeVideoPlayer.Pause();
     }
+    if(isModeVisible){
+        toggleModeBox()
+    }
 }
 
 function forwardClick(){
     $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
     CodeVideoPlayer.GoToNextFrame();
+    if(isModeVisible){
+        toggleModeBox()
+    }
 }
 
 function backwardClick(){
     $("#play-button").addClass("play-button-style").removeClass("pause-button-style");
     CodeVideoPlayer.BackToLastFrame();
+    if(isModeVisible){
+        toggleModeBox()
+    }
 }
 
 function replayClick(){
     $("#play-button").removeClass("play-button-style").addClass("pause-button-style");
     CodeVideoPlayer.Replay();
+    if(isModeVisible){
+        toggleModeBox()
+    }
 }
 
 function toggleModeBox() {
