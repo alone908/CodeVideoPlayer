@@ -47,24 +47,41 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
         CodeVideoPlayer.JSONObj.forEach(function (items, key) {
             items.highlights.forEach(function (info, index) {
                 var textArray = info.selection.split("");
+                var lineBreak = 0;
+                var chrPos = 0;
+                if(typeof ContentMap[parseInt(info.begin_line)] === 'undefined'){
+                    ContentMap[parseInt(info.begin_line)] = [];
+                }
                 textArray.forEach(function (chr, number) {
-                    if(typeof ContentMap[parseInt(info.begin_line)] === 'undefined'){
-                        ContentMap[parseInt(info.begin_line)] = [];
+                    if(chr !== '\n'){
+                        if(lineBreak === 0){
+                            ContentMap[parseInt(info.begin_line)+lineBreak][parseInt(info.begin_ch)+chrPos] = chr;
+                        }else {
+                            ContentMap[parseInt(info.begin_line)+lineBreak][chrPos] = chr;
+                        }
+                        chrPos ++ ;
+                    }else {
+                        lineBreak ++;
+                        if(typeof ContentMap[parseInt(info.begin_line)+lineBreak] === 'undefined'){
+                            ContentMap[parseInt(info.begin_line)+lineBreak] = [];
+                        }
+                        chrPos = 0;
                     }
-                    ContentMap[parseInt(info.begin_line)][parseInt(info.begin_ch)+number] = chr;
                 })
             })
         });
 
+        var totalChrs = 0;
         for(var lineKey=0; lineKey<=ContentMap.length-1; lineKey++){
             var firstChrHappened = false;
             if(typeof ContentMap[lineKey] === 'undefined'){
                 ContentMap[lineKey] = [];
                 ContentMap[lineKey].push(CodeVideoPlayer.EmptyGrid);
-                SpaceMap[lineKey + '-0'] = {type: 'emptyline', previousLineLength: ContentMap[lineKey-1].length};
+                SpaceMap[lineKey + '-0'] = {type: 'emptyline', previousLineLength: ContentMap[lineKey-1].length, previousTotalChrs: totalChrs};
             }
             var line = ContentMap[lineKey];
             for(var chrPos=0; chrPos<=line.length-1; chrPos++){
+                totalChrs ++ ;
                 if(typeof ContentMap[lineKey][chrPos] !== 'undefined' && !firstChrHappened){
                     firstChrHappened = true;
                     for (var i = 0; i < chrPos; i++){
@@ -129,6 +146,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
 
                 var textArray = info.selection.split("");
                 var chrPos = info.begin_ch;
+                var lineBreak = 0;
 
                 textArray.forEach(function (chr, n) {
 
@@ -141,12 +159,21 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                         })
                     })
 
-                    if(RealFrame[RealFrame.length-2][info.begin_line][chrPos] === CodeVideoPlayer.EmptyGrid){
-                        RealFrame[RealFrame.length-1][info.begin_line][chrPos] = chr;
+                    if(chr !== '\n'){
+                        if(RealFrame[RealFrame.length-2][parseInt(info.begin_line)+lineBreak][chrPos] === CodeVideoPlayer.EmptyGrid){
+                            RealFrame[RealFrame.length-1][parseInt(info.begin_line)+lineBreak][chrPos] = chr;
+                        }else {
+                            RealFrame[RealFrame.length-1][parseInt(info.begin_line)+lineBreak].splice(chrPos, 0, chr);
+                        }
+                        chrPos ++;
                     }else {
-                        RealFrame[RealFrame.length-1][info.begin_line].splice(chrPos, 0, chr);
+                        if(typeof RealFrame[RealFrame.length-1][info.begin_line+lineBreak] === 'undefined'){
+                            RealFrame[RealFrame.length-1][info.begin_line+lineBreak] = [];
+                        }
+                        lineBreak ++ ;
+                        chrPos = 0;
                     }
-                    chrPos ++;
+
                 })
             })
         });
@@ -222,13 +249,17 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
                 var newFrame1 = [];
                 var newFrame2 = [];
 
-                for(var frameKey = 0; frameKey < VirtualFrame.length; frameKey ++){
-                    if(frameKey > 0){
-                        if(VirtualFrame[frameKey].length-1 > spaceLineKey && VirtualFrame[frameKey-1][spaceLineKey-1].length === CodeVideoPlayer.SpaceMap[index].previousLineLength){
-                            if(happenedFrame === -1){
+                for(var frameKey = 1; frameKey < VirtualFrame.length; frameKey ++){
+                    var previousLineTotalChr = 0
+                    if (VirtualFrame[frameKey].length - 1 > spaceLineKey) {
+                        for (var lineKey = 0; lineKey < spaceLineKey; lineKey++) {
+                            previousLineTotalChr += VirtualFrame[frameKey][lineKey].length;
+                        }
+                        if (CodeVideoPlayer.SpaceMap[index].previousTotalChrs === previousLineTotalChr) {
+                            if (happenedFrame === -1) {
                                 happenedFrame = frameKey;
                             }
-                            VirtualFrame[frameKey].splice(spaceLineKey,0,[" "]);
+                            VirtualFrame[frameKey].splice(spaceLineKey, 0, [" "]);
                         }
                     }
                 };
