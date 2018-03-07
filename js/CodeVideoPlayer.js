@@ -12,6 +12,7 @@ function CodeVideoPlayer(){
     this.isPlaying = false;
     this.VideoEnded = function () {};
     this.FrameChanged = function() {};
+    this.isVirtualFrameVerified = true;
 
 }
 
@@ -26,6 +27,7 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
     CodeVideoPlayer.CurrentFrame = 1;
     clearInterval(CodeVideoPlayer.VideoTimer);
     CodeVideoPlayer.isPlaying = false;
+    CodeVideoPlayer.isVirtualFrameVerified = true;
 
     CodeVideoPlayer.PlayerID = PlayerID;
     CodeVideoPlayer.JSONString = JSONString;
@@ -310,6 +312,27 @@ CodeVideoPlayer.prototype.CreateVideo = function(JSONString,PlayerID){
 
                     break;
 
+            }
+        }
+
+        for(var lineKey = 0; lineKey <= CodeVideoPlayer.ContentMap.length-1; lineKey ++){
+            for(var chrPos = 0; chrPos <= CodeVideoPlayer.ContentMap[lineKey].length-1; chrPos ++){
+                chr = CodeVideoPlayer.ContentMap[lineKey][chrPos];
+                if(chr === CodeVideoPlayer.EmptyGrid || chr === CodeVideoPlayer.SpaceGrid){
+                    if(VirtualFrame[VirtualFrame.length-1][lineKey][chrPos] !== " "){
+                        CodeVideoPlayer.isVirtualFrameVerified = false;
+                        break;
+                    }
+                }else{
+                    if(VirtualFrame[VirtualFrame.length-1][lineKey][chrPos] !== chr){
+                        CodeVideoPlayer.isVirtualFrameVerified = false;
+                        break;
+                    }
+                }
+            }
+            if(!CodeVideoPlayer.isVirtualFrameVerified){
+                console.warn("The last frame output is not as same as json data.(line:"+lineKey+" chr:"+chrPos+")");
+                break;
             }
         }
 
