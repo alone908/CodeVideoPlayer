@@ -6,6 +6,7 @@ var isProgressVisisble = false;
 var PageToolTip = '';
 var admin_ProgressWidth = 926;
 var isModeVisible = false;
+var isPageComboVisible = false;
 
 $(document).ready(function () {
 
@@ -30,7 +31,12 @@ $(document).ready(function () {
     $('#forward-button').bind('click',forwardClick);
     $('#backward-button').bind('click',backwardClick);
     $('#replay-button').bind('click',replayClick);
-    $("#mode-button").bind('click', toggleModeBox);
+    $("#mode-button").bind('click', function(){
+        if(isPageComboVisible){
+            togoPageCombo();
+        }
+        toggleModeBox()
+    });
     $('.mode-select').bind('click', modeSelect);
     $('#page-combo').bind('click', togoPageCombo);
     $("#progress-bar").bind('mouseover', function () {
@@ -133,6 +139,9 @@ function HideProgress() {
 
 function jsonFileClick(){
     togoPageCombo();
+    if($("#play-button").hasClass("play-button-style")){
+        $("#play-button").removeClass("play-button-style").addClass("pause-button-style");
+    }
     $('#page-combo').html($(this).text());
     load_json_file($(this).text());
 }
@@ -142,10 +151,12 @@ function togoPageCombo(){
         $('#page-select').animate({
             height:'0px'
         },500)
+        isPageComboVisible = false;
     }else {
         $('#page-select').animate({
             height:'260px'
         },500)
+        isPageComboVisible = true;
     }
     if(isModeVisible){
         toggleModeBox()
@@ -163,6 +174,9 @@ function playClick(){
     if(isModeVisible){
         toggleModeBox()
     }
+    if(isPageComboVisible){
+        togoPageCombo();
+    }
 }
 
 function forwardClick(){
@@ -170,6 +184,9 @@ function forwardClick(){
     CodeVideoPlayer.GoToNextFrame();
     if(isModeVisible){
         toggleModeBox()
+    }
+    if(isPageComboVisible){
+        togoPageCombo();
     }
 }
 
@@ -179,6 +196,9 @@ function backwardClick(){
     if(isModeVisible){
         toggleModeBox()
     }
+    if(isPageComboVisible){
+        togoPageCombo();
+    }
 }
 
 function replayClick(){
@@ -186,6 +206,9 @@ function replayClick(){
     CodeVideoPlayer.Replay();
     if(isModeVisible){
         toggleModeBox()
+    }
+    if(isPageComboVisible){
+        togoPageCombo();
     }
 }
 
