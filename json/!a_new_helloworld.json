@@ -417,5 +417,144 @@
       }
     ],
     "highlightID": 2
+  },
+  {
+    "name": "add span",
+    "id": 16,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "8",
+        "end_line": "9",
+        "end_ch": "9",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "36",
+        "end_line": "9",
+        "end_ch": "37",
+        "selection": ">",
+        "hid": 3
+      }
+    ],
+    "highlightID": 3
+  },
+  {
+    "name": "first element",
+    "id": 17,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "9",
+        "end_line": "9",
+        "end_ch": "13",
+        "selection": "span",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  },
+  {
+    "name": "second brackets",
+    "id": 18,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "89",
+        "end_line": "9",
+        "end_ch": "90",
+        "selection": "<",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "95",
+        "end_line": "9",
+        "end_ch": "96",
+        "selection": ">",
+        "hid": 3
+      }
+    ],
+    "highlightID": 3
+  },
+  {
+    "name": "close first element",
+    "id": 19,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "90",
+        "end_line": "9",
+        "end_ch": "95",
+        "selection": "/span",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  },
+  {
+    "name": "add text",
+    "id": 20,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "37",
+        "end_line": "9",
+        "end_ch": "89",
+        "selection": "This is a digital world, everything is made by code.",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
+  },
+  {
+    "name": "add empty style",
+    "id": 21,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "14",
+        "end_line": "9",
+        "end_ch": "21",
+        "selection": "style=\"",
+        "hid": 2
+      },
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "35",
+        "end_line": "9",
+        "end_ch": "36",
+        "selection": "\"",
+        "hid": 3
+      }
+    ],
+    "highlightID": 3
+  },
+  {
+    "name": "add class name",
+    "id": 22,
+    "highlights": [
+      {
+        "select_type": "html",
+        "begin_line": "9",
+        "begin_ch": "21",
+        "end_line": "9",
+        "end_ch": "35",
+        "selection": "font-size:18px",
+        "hid": 2
+      }
+    ],
+    "highlightID": 2
   }
 ]
