@@ -1,0 +1,112 @@
+[
+{
+            "name" : "assign a variable",
+            "id" : 1,
+            "highlights" : [ 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "0",
+                    "begin_ch" : "0",
+                    "end_line" : "0",
+                    "end_ch" : "4",
+                    "selection" : "var ",
+                    "hid" : 19
+                }, 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "0",
+                    "begin_ch" : "4",
+                    "end_line" : "0",
+                    "end_ch" : "11",
+                    "selection" : "_JS_num",
+                    "hid" : 24
+                }, 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "0",
+                    "begin_ch" : "12",
+                    "end_line" : "0",
+                    "end_ch" : "13",
+                    "selection" : "=",
+                    "hid" : 25
+                }, 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "0",
+                    "begin_ch" : "14",
+                    "end_line" : "0",
+                    "end_ch" : "15",
+                    "selection" : "0",
+                    "hid" : 26
+                }, 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "0",
+                    "begin_ch" : "15",
+                    "end_line" : "0",
+                    "end_ch" : "16",
+                    "selection" : ";",
+                    "hid" : 27
+                }
+            ],
+            "highlightID" : 28,
+            "universal_name" : "create integer",
+            "questions" : [ 
+                "QQ-1001"
+            ]
+        }, 
+        {
+            "name" : "js change span",
+            "id" : 5,
+            "highlights" : [ 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "6",
+                    "begin_ch" : "1",
+                    "end_line" : "6",
+                    "end_ch" : "27",
+                    "selection" : "$(\"#_HTML_num\").html(ans);",
+                    "hid" : 4
+                }
+            ],
+            "highlightID" : 4,
+            "universal_name" : "change ID",
+            "questions" : [ 
+                "QQ-9494175"
+            ]
+        },
+        {
+            "name" : "ffff",
+            "id" : 13,
+            "highlights" : [ 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "4",
+                    "begin_ch" : "1",
+                    "end_line" : "4",
+                    "end_ch" : "12",
+                    "selection" : "var pad = \"",
+                    "hid" : 2
+                }, 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "4",
+                    "begin_ch" : "17",
+                    "end_line" : "4",
+                    "end_ch" : "19",
+                    "selection" : "\";",
+                    "hid" : 3
+                }, 
+                {
+                    "select_type" : "js",
+                    "begin_line" : "4",
+                    "begin_ch" : "12",
+                    "end_line" : "4",
+                    "end_ch" : "17",
+                    "selection" : "00000",
+                    "hid" : 4
+                }
+            ],
+            "highlightID" : 4
+        }
+]
