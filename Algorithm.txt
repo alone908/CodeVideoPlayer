@@ -1,5 +1,5 @@
 [
-[<,t,m,l,>],
+[<,h,t,m,l,>],
 [``],
 [``,``,``,``,<,h,e,a,d,>],
 [``,``,``,``,``,``,``,``,<,t,i,t,l,e,>,H,e,l,l,o, ,W,o,r,l,d,<,/,t,i,t,l,e,>],
@@ -21,211 +21,126 @@
 
 Virtual Frame:
 []
-
-steps 1.
-
-Virtual Frame:
+===
 [<]
-
-
-****************************************************************
-
-Virtual Frame:
-[<]
-
-steps 2.
-
-Virtual Frame:
+=====
 [<,>]
-
-****************************************************************
-
-Virtual Frame:
-[<,>]
-
-steps 3.
-
-Virtual Frame:
-[<,h,t,m,l,>],
-
-****************************************************************
-
-Virtual Frame:
+=====
 [<,h,t,m,l,>]
-
-steps 4,5,6.
-
-Virtual Frame:
-
+=============
+[<,h,t,m,l,>]
+[<]
+================
+[<,h,t,m,l,>]
+[<,>]
+=====================
 [<,h,t,m,l,>]
 [<,/,h,t,m,l,>]
-
-****************************************************************
-
-Virtual Frame:
+==========================
 [<,h,t,m,l,>]
+[``]
+[``]
 [<,/,h,t,m,l,>]
+=============================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<],
+[<,/,h,t,m,l,>]
+================================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<,>],
+[<,/,h,t,m,l,>]
+================================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<,h,e,a,d,>],
+[<,/,h,t,m,l,>]
+===============================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<,h,e,a,d,>]
+[``]
+[``]
+[<,/,h,t,m,l,>]
+======================================
+===============================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<,h,e,a,d,>]
+[``,``,``,``,<]
+[``]
+[<,/,h,t,m,l,>]
+======================================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<,h,e,a,d,>]
+[``,``,``,``,<,>]
+[``]
+[<,/,h,t,m,l,>]
+=============================================
+[<,h,t,m,l,>]
+[``]
+[``,``,``,``,<,h,e,a,d,>]
+[``,``,``,``,<,/,h,e,a,d,>]
+[``]
+[<,/,h,t,m,l,>]
+================================================
+failed !!!
 
-steps 7.
-
-Virtual Frame:
-
-
-
-
-
-1-1.check writing position in virtual is empty or not.
+1. Is this position empty or not ?
 
 Yes:
 
-    2-1.check any closer position in this line until another letter(from position looking forwark).
+    Is this line currently empty or not ?
 
-        Yes: --> write after that letter.
+    Yes:
+
+        Is there any line(finished) before this position should be after currently ?
+
+        Yes: --> find out the farthest line that is currently before this position but should be after, then push everything to one line after this position.
+             -->add one frame--> marked empty line --> back to 1.
+
+        No:
+
+            Is there any optional vertical position that is more ahead until meets another letter or marked empty line ?
+
+            Yes: --> go to that position -- back to 1.
+
+            NO:
+
+                Is there any line unfinished and the nearest of the position ?
+
+                Yes: --> go to that position --> back to 1.
+
+                No: Start writing.
+
+    No:
+
+            Is there any optional horizontal position in this line that is more ahead until meets another letter ?
+
+            Yes: --> start writing from that optional position.
+
+            No: --> start writing.
 
 
-        No: --> write at the exactly position.
 
 NO:
 
-    2-2.check this line is finished or not.
+    Is this line currently empty or not ?
 
-        Yes:
+    Yes:
 
-            3-1. check line position is smaller than it should be.
+        check line position is smaller than it should be.
 
-                Yes: pushed this line until the line need to be written shows. --> go to 1-1.
-
-                No:
+        Yes: pushed this line until the line need to be written shows. --> go to 1.
 
         No:
 
-            3-2. check this is the first letter in this line(from position looking forwark).
+    No:
 
-                Yes: -->
+        Is there any optional horizontal position in this line that is more ahead until meets another letter ?
 
-                No: --> insert.
+        Yes: --> start writing from that optional position.
 
-
-
-
-
-
-
-Virtaul Frame after:
-[<]
-
-
-
-Virtaul Frame:
-
-when:
-[<,t,m,l,>],
-[<,/,h,t,m,l,>]
-
-type <head> at line 2 ;
-
-1.check position in virtual is empty or not.
-
-empty:
-
-    1-1. check any space line afront of it.
-
-        Yes: (line 1)
-
-            1-1-1. check anything on space line currently.
-
-                Yes. --> push down until the line to be written shown --> start write.
-
-                NO.
-
-        No:
-
-not empty:
-
-
-
-when:
-[<,t,m,l,>],
-[``],
-[``,``,``,``,<,h,e,a,d,>],
-[``,``,``,``,``,``,``,``,<,t,i,t,l,e,>,H,e,l,l,o, ,W,o,r,l,d,<,/,t,i,t,l,e,>],
-<[``,``,``,``,/,h,e,a,d,>],
-[<,/,h,t,m,l,>]
-
-type <body> at line 6
-
-1.check position in virtual is empty or not.
-
-empty:
-
-    1-1. check any space line afront of it.
-
-        Yes: (line 5)
-
-            1-1-1. check anything on space line currently.
-
-                Yes. --> push down until the line to be written shown --> start write.
-
-                NO.
-
-        No:
-
-
-when:
-[<,t,m,l,>],
-[``],
-[``,``,``,``,<,h,e,a,d,>],
-[``,``,``,``,``,``,``,``,<,t,i,t,l,e,>,H,e,l,l,o, ,W,o,r,l,d,<,/,t,i,t,l,e,>],
-<[``,``,``,``,/,h,e,a,d,>],
-[``],
-[``,``,``,``,<,b,o,d,y,>],
-[``,``,``,``,<,/,b,o,d,y,>],
-[<,/,h,t,m,l,>]
-
-type <span> at line
-
-1.check position in virtual is empty or not.
-
-empty:
-
-    1-1. check any space line afront of it.
-
-        Yes:
-
-            1-1-1. check anything on space line currently.
-
-                Yes. --> push down until the line to be written shown --> start write.
-
-                NO.
-
-        No:
-
-
-
-
-when:
-
-[
-[<,t,m,l,>],
-[``],
-[``,``,``,``,<,h,e,a,d,>],
-[``,``,``,``,``,``,``,``,<,t,i,t,l,e,>,H,e,l,l,o, ,W,o,r,l,d,<,/,t,i,t,l,e,>],
-<[``,``,``,``,/,h,e,a,d,>],
-[``],
-[``,``,``,``,<,b,o,d,y,>],
-[``],
-[``,``,``,``,``,``,``,``,<,h,1, ,i,d,=,",m,y,I,D,", ,c,l,a,s,s,=,",m,y,C,l,a,s,s,",>,M,y, ,f,i,r,s,t, ,h,e,l,l,o, ,w,o,r,l,d, ,p,r,o,g,r,a,m,.,<,/,h,1,>],
-[``,``,``,``,``,``,``,``,<,s,p,a,n, ,s,t,y,l,e,=,",f,o,n,t,-,s,i,z,e,:,1,8,p,x,",>,T,h,i,s, ,i,s, ,a, ,d,i,g,i,t,a,l, ,w,o,r,l,d,,, ,e,v,e,r,y,t,h,i,n,g, ,i,s, ,m,a,d,e, ,b,y, ,c,o,d,e,.],
-[T,h,e, ,d,i,g,i,t,a,l, ,r,e,v,o,l,u,t,i,o,n, ,h,a,s, ,l,a,u,n,c,h,e,d, ,a, ,n,e,w, ,e,r,a, ,o,f, ,h,u,m,a,n, ,e,m,p,o,w,e,r,m,e,n,t, ,a,n,d, ,e,n,g,a,g,e,m,e,n,t, ,a,c,r,o,s,s, ,b,u,s,i,n,e,s,s,,],
-[s,o,c,i,e,t,y, ,a,n,d, ,i,n, ,e,v,e,r,y, ,a,s,p,e,c,t, ,o,f, ,o,u,r, ,l,i,v,e,s,.,<,/,s,p,a,n,>],
-[``,``,``,``,<,/,b,o,d,y,>],
-[<,/,h,t,m,l,>]
-]
-
-
-all steps finished:
-
---> insert space line.
-
-
-
+        No: --> start writing.
